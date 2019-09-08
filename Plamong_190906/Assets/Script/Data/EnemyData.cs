@@ -39,10 +39,10 @@ public class EnemyData : ScriptableObject
         }
     }
 
-    [Header("Bonus Stat")]
+    [Header("Speed stat")]
     [SerializeField]
-    private int attackSpeed;
-    public int AttackSpeed
+    private float attackSpeed;
+    public float AttackSpeed
     {
         get { return attackSpeed; }
         set
@@ -52,8 +52,8 @@ public class EnemyData : ScriptableObject
     }
 
     [SerializeField]
-    private int moveSpeed;
-    public int MoveSpeed
+    private float moveSpeed;
+    public float MoveSpeed
     {
         get { return moveSpeed; }
         set
@@ -63,8 +63,8 @@ public class EnemyData : ScriptableObject
     }
 
     [SerializeField]
-    private int castingSpeed;
-    public int CastingSpeed
+    private float castingSpeed;
+    public float CastingSpeed
     {
         get { return castingSpeed; }
         set

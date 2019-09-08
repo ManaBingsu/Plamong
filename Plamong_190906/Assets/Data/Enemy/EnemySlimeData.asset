@@ -9,17 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17f42d9b92174ca43b2f9ecb90428f6f, type: 3}
-  m_Name: PlayerData
+  m_Script: {fileID: 11500000, guid: 9173987d7981ab54c8d23a1a9b33e4b8, type: 3}
+  m_Name: EnemySlimeData
   m_EditorClassIdentifier: 
-  maxDurability: 50
-  durability: 50
-  maxPower: 30
-  power: 30
-  maxTitanium: 100
-  titanium: 100
-  damage: 10
+  maxHP: 100
+  hP: 100
+  damage: 5
   attackSpeed: 1
-  moveSpeed: 4
+  moveSpeed: 3
   castingSpeed: 1
-  transformSpeed: 1

@@ -68,7 +68,7 @@ public class CameraController : MonoBehaviour
         moveCamera = new MoveCamera(MouseMode);
     }
 
-    private void FixedUpdate()
+    private void LateUpdate()
     {
         moveCamera();
     }
@@ -116,17 +116,17 @@ public class CameraController : MonoBehaviour
         // 마우스 벡터 - 화면 중앙 벡터
         Vector3 direction = (mousePosition - screenCenter) * screenCorrection;
         // 총 벡터 크기
-        float Mag = Vector3.Magnitude(direction);
+        //float Mag = Vector3.Magnitude(direction);
+        float Mag = Vector3.Distance(mousePosition, screenCenter) * screenCorrection;
         // 범위 제한식
-        if (Mag < maxMouseDistance)
+        if (Mag <= maxMouseDistance)
         {
-            transform.position = Vector3.Lerp(playerPos, playerPos + direction, Time.deltaTime * cameraMoveSpeed);
+            transform.position = Vector3.Lerp(playerPos, playerPos + direction, Time.fixedDeltaTime * cameraMoveSpeed);
         }
         else
         {
-            transform.position = Vector3.Lerp(playerPos, playerPos + direction.normalized * maxMouseDistance, Time.deltaTime * cameraMoveSpeed);
+            transform.position = Vector3.Lerp(playerPos, playerPos + direction.normalized * maxMouseDistance, Time.fixedDeltaTime * cameraMoveSpeed);
         }
-
     }
     // (미구현)플레이어 중심으로 카메라를 제어합니다.
     void TargetMode()

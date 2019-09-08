@@ -15,9 +15,9 @@ public class PlayerController : MonoBehaviour
             player = this;
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
-        transform.position += new Vector3(0.005f, 0f, 0f);
+        Move();
     }
 
     private void Start()
@@ -32,7 +32,14 @@ public class PlayerController : MonoBehaviour
     // 플레이어 움직임 제어
     void Move()
     {
-
+        if(Input.GetKey(KeyCode.W))
+            transform.position += new Vector3(0f, 0f, playerData.MoveSpeed * Time.deltaTime);
+        if (Input.GetKey(KeyCode.A))
+            transform.position += new Vector3(-playerData.MoveSpeed * Time.deltaTime, 0f, 0f);
+        if (Input.GetKey(KeyCode.S))
+            transform.position += new Vector3(0f, 0f, -playerData.MoveSpeed * Time.deltaTime);
+        if (Input.GetKey(KeyCode.D))
+            transform.position += new Vector3(playerData.MoveSpeed * Time.deltaTime, 0f, 0f);
     }
     // 플레이어 공격 제어
     void MouseAttack()

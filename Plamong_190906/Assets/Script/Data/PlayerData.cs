@@ -91,7 +91,7 @@ public class PlayerData : ScriptableObject
         }
     }
 
-    [Header("Bonus stat")]
+    [Header("Speed stat")]
     [SerializeField]
     private float attackSpeed;
     public float AttackSpeed
