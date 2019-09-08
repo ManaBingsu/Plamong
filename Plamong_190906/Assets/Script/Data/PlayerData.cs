@@ -32,6 +32,8 @@ public class PlayerData : ScriptableObject
         }
     }
 
+    private int hp;
+
     [SerializeField]
     private int maxPower;
     public event EventHandler EvMaxPower;

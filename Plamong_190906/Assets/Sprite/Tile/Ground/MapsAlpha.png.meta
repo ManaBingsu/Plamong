@@ -1,0 +1,2224 @@
+fileFormatVersion: 2
+guid: 9c4d08eceb16654428daba5bbd50123a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3270144010675383379
+    second: MapsAlpha_0
+  - first:
+      213: 2404342692416576442
+    second: MapsAlpha_1
+  - first:
+      213: 2748359278130607685
+    second: MapsAlpha_2
+  - first:
+      213: 8055088853808463821
+    second: MapsAlpha_3
+  - first:
+      213: -6181439842444664704
+    second: MapsAlpha_4
+  - first:
+      213: 4434849269175385018
+    second: MapsAlpha_5
+  - first:
+      213: 4904890291370232766
+    second: MapsAlpha_6
+  - first:
+      213: 6602165685874720264
+    second: MapsAlpha_7
+  - first:
+      213: -5035026189723419556
+    second: MapsAlpha_8
+  - first:
+      213: 6505069998415280304
+    second: MapsAlpha_9
+  - first:
+      213: -3470314015436605434
+    second: MapsAlpha_10
+  - first:
+      213: -5687770548945692006
+    second: MapsAlpha_11
+  - first:
+      213: 5214788801940063095
+    second: MapsAlpha_12
+  - first:
+      213: -2190619233614872890
+    second: MapsAlpha_13
+  - first:
+      213: -6005419784293724795
+    second: MapsAlpha_14
+  - first:
+      213: 78025648349675288
+    second: MapsAlpha_15
+  - first:
+      213: -1706827719638623515
+    second: MapsAlpha_16
+  - first:
+      213: 6084022892744156475
+    second: MapsAlpha_17
+  - first:
+      213: -4785441839791951637
+    second: MapsAlpha_18
+  - first:
+      213: -3524217052978931411
+    second: MapsAlpha_19
+  - first:
+      213: -5022538328726082263
+    second: MapsAlpha_20
+  - first:
+      213: -1793067856854489076
+    second: MapsAlpha_21
+  - first:
+      213: 1719817851069614839
+    second: MapsAlpha_22
+  - first:
+      213: 3605095622869723160
+    second: MapsAlpha_23
+  - first:
+      213: 4165461420566608378
+    second: MapsAlpha_24
+  - first:
+      213: -7592702520588252040
+    second: MapsAlpha_25
+  - first:
+      213: -4583710519952233465
+    second: MapsAlpha_26
+  - first:
+      213: -5416808964794832509
+    second: MapsAlpha_27
+  - first:
+      213: 7708443569083232688
+    second: MapsAlpha_28
+  - first:
+      213: 635403952151632851
+    second: MapsAlpha_29
+  - first:
+      213: 1840707840439263921
+    second: MapsAlpha_30
+  - first:
+      213: 3173868415029571107
+    second: MapsAlpha_31
+  - first:
+      213: 1769442722442496665
+    second: MapsAlpha_32
+  - first:
+      213: -7945891360308027831
+    second: MapsAlpha_33
+  - first:
+      213: 1227961632056427809
+    second: MapsAlpha_34
+  - first:
+      213: 6599897320176110798
+    second: MapsAlpha_35
+  - first:
+      213: -2795138852132817213
+    second: MapsAlpha_36
+  - first:
+      213: 8887493623623424870
+    second: MapsAlpha_37
+  - first:
+      213: -4470452574323425769
+    second: MapsAlpha_38
+  - first:
+      213: 7922846559251239568
+    second: MapsAlpha_39
+  - first:
+      213: 7158865203019054338
+    second: MapsAlpha_40
+  - first:
+      213: -7892720282304086297
+    second: MapsAlpha_41
+  - first:
+      213: 7771619138132588845
+    second: MapsAlpha_42
+  - first:
+      213: -8859182536278154547
+    second: MapsAlpha_43
+  - first:
+      213: 3170214423255003031
+    second: MapsAlpha_44
+  - first:
+      213: -2772492151707262412
+    second: MapsAlpha_45
+  - first:
+      213: -9208741560687725124
+    second: MapsAlpha_46
+  - first:
+      213: -519440898269886658
+    second: MapsAlpha_47
+  - first:
+      213: -7034188959393775733
+    second: MapsAlpha_48
+  - first:
+      213: 3698850845565382886
+    second: MapsAlpha_49
+  - first:
+      213: 7954110845853782265
+    second: MapsAlpha_50
+  - first:
+      213: -6412405588780278190
+    second: MapsAlpha_51
+  - first:
+      213: 321619137202112654
+    second: MapsAlpha_52
+  - first:
+      213: 9197769301940211271
+    second: MapsAlpha_53
+  - first:
+      213: 3475989269673936974
+    second: MapsAlpha_54
+  - first:
+      213: 2494133761963239148
+    second: MapsAlpha_55
+  - first:
+      213: 2889895820422433936
+    second: MapsAlpha_56
+  - first:
+      213: 8402659695867561016
+    second: MapsAlpha_57
+  - first:
+      213: -4115724751519993269
+    second: MapsAlpha_58
+  - first:
+      213: 5485233656868429603
+    second: MapsAlpha_59
+  - first:
+      213: -8181450476632035122
+    second: MapsAlpha_60
+  - first:
+      213: 8658541116782136717
+    second: MapsAlpha_61
+  - first:
+      213: 4574346997808051226
+    second: MapsAlpha_62
+  - first:
+      213: 972520098014294404
+    second: MapsAlpha_63
+  - first:
+      213: -7115829858020460760
+    second: MapsAlpha_64
+  - first:
+      213: 1389925446245389912
+    second: MapsAlpha_65
+  - first:
+      213: -3242285091015493118
+    second: MapsAlpha_66
+  - first:
+      213: 4987213936896521649
+    second: MapsAlpha_67
+  - first:
+      213: -6635565950782365067
+    second: MapsAlpha_68
+  - first:
+      213: 667482155832630342
+    second: MapsAlpha_69
+  - first:
+      213: -8732270121142971529
+    second: MapsAlpha_70
+  - first:
+      213: -8353405933439361617
+    second: MapsAlpha_71
+  - first:
+      213: 6921803779517946154
+    second: MapsAlpha_72
+  - first:
+      213: 6371141342878609682
+    second: MapsAlpha_73
+  - first:
+      213: 986555424161235635
+    second: MapsAlpha_74
+  - first:
+      213: -4825319492356542316
+    second: MapsAlpha_75
+  - first:
+      213: -495396952040944938
+    second: MapsAlpha_76
+  - first:
+      213: -8680570077148572517
+    second: MapsAlpha_77
+  - first:
+      213: -7164857430318434494
+    second: MapsAlpha_78
+  - first:
+      213: 1534948329569860846
+    second: MapsAlpha_79
+  - first:
+      213: -6509624177369313656
+    second: MapsAlpha_80
+  - first:
+      213: -8580993916808361581
+    second: MapsAlpha_81
+  - first:
+      213: -1645388621914997891
+    second: MapsAlpha_82
+  - first:
+      213: 1151027598602865002
+    second: MapsAlpha_83
+  - first:
+      213: 4504510087093535597
+    second: MapsAlpha_84
+  - first:
+      213: -6843519982100034
+    second: MapsAlpha_85
+  - first:
+      213: -7260326058014510148
+    second: MapsAlpha_86
+  - first:
+      213: -3564620736738802775
+    second: MapsAlpha_87
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: MapsAlpha_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 206
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfd3fa32b1a582c4e8760f134ebb3c77
+      internalID: -3270144010675383379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_1
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 206
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c2b96464103a67458826cbc8510e4a0
+      internalID: 2404342692416576442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_2
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 206
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42ecca01d6a68fd4885dd516f680eac0
+      internalID: 2748359278130607685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_3
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 206
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f65f032663d3e4e459efb0a0a75e4757
+      internalID: 8055088853808463821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_4
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 206
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccae514d017eaa642aa852497e8d40e6
+      internalID: -6181439842444664704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_5
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 206
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15baa272387a02547a8af9b127c7c4f8
+      internalID: 4434849269175385018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_6
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 206
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f4132a1a72317a4592acdfe4cdf7ed4
+      internalID: 4904890291370232766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_7
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 206
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 246ce7a8a6c62a4449df7e1e163b85bd
+      internalID: 6602165685874720264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_8
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 206
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eee7b54af949ffd4fb4b82e1c01ba02a
+      internalID: -5035026189723419556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_9
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 206
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65d4f7d55821e36489de8ecfda2f1eba
+      internalID: 6505069998415280304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_10
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 206
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c46fadb915e9544fb454967fb73bcb7
+      internalID: -3470314015436605434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_11
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 206
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f74f45ea35a0cd940bc56a4e79190c15
+      internalID: -5687770548945692006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_12
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 206
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 298f3f7cca5dd7d4e9b3b67ae9db800f
+      internalID: 5214788801940063095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_13
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 172
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04f19c7254e47dd498017f6c28997ea3
+      internalID: -2190619233614872890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_14
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 172
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13334bbc015321242b65f76720ce5e01
+      internalID: -6005419784293724795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_15
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 172
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 806143287ae71604b9843c4e0b0b23e9
+      internalID: 78025648349675288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_16
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 172
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 317465bb9b868894e8c37a0b9f0aa4ce
+      internalID: -1706827719638623515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_17
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 172
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d65c6b563be808459601cdd8f8ff63d
+      internalID: 6084022892744156475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_18
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 172
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a0ff1ecca11c984092c95411e0193f3
+      internalID: -4785441839791951637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_19
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 172
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a3f7f7722e770d45b2aadd29d902a61
+      internalID: -3524217052978931411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_20
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 172
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b14150437d8b5e428159027ded7a3d1
+      internalID: -5022538328726082263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_21
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 172
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d1abc616f5afce458d9363b0e9ea876
+      internalID: -1793067856854489076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_22
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 172
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66ac17aea9ed1b94287be62e57343de7
+      internalID: 1719817851069614839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_23
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 172
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c5940be79f2ad84da17784df6cedebf
+      internalID: 3605095622869723160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_24
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 172
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfb52b2cd104ed3488469d53bd1206c0
+      internalID: 4165461420566608378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_25
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 138
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 907959324a8c2c74aa0f3b4dfa44a08e
+      internalID: -7592702520588252040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_26
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 138
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a26daa63156ee174882beebef4d402d1
+      internalID: -4583710519952233465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_27
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 138
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0969fc501f1f0a469e950f7779d2a55
+      internalID: -5416808964794832509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_28
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 138
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 975adea67f5f2c04880ed22881b0b0f8
+      internalID: 7708443569083232688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_29
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 138
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7e26ab496e17f244972389f1c558b56
+      internalID: 635403952151632851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_30
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 138
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac6cd6c9502341d469899b46c54d57bf
+      internalID: 1840707840439263921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_31
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 138
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 734e4e5103a7dd94f9e916538c9b379a
+      internalID: 3173868415029571107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_32
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 138
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01f2c49a4d4ea0b448d95a2c0e50ee72
+      internalID: 1769442722442496665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_33
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 138
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bce7c1500f7abaf4ebf5d4c5d785dd33
+      internalID: -7945891360308027831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_34
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 138
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76231ce3e507c58419bb4a116a6c40b1
+      internalID: 1227961632056427809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_35
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 138
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81208b50e5185d9459dfbe0e4d847059
+      internalID: 6599897320176110798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_36
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 138
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ed85511e9eb1644fb0d2b858a16af3d
+      internalID: -2795138852132817213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_37
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 138
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4591383e38711684081ccfb506e591fb
+      internalID: 8887493623623424870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_38
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 104
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9eae50e850d4e6746ad8d3d6ef19e233
+      internalID: -4470452574323425769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_39
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 104
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5176a7e1101dfa64a8163bd97e073776
+      internalID: 7922846559251239568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_40
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 104
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 804c07906334dfe4fb0207578f62aa79
+      internalID: 7158865203019054338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_41
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 104
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6780f9f4a4607084f8fb0bd5b7d0fe5f
+      internalID: -7892720282304086297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_42
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 104
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 073dca8d86e66d5428ee8234146b0b22
+      internalID: 7771619138132588845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_43
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 104
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9379d03319566b74782ba9f73b585b71
+      internalID: -8859182536278154547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_44
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 104
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea9b03a34c110964fa45fd3f082ae0c4
+      internalID: 3170214423255003031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_45
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 104
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ce2d6c5a7666854897b3e6bc9e2ce5b
+      internalID: -2772492151707262412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_46
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 104
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aaedffada46c4994eb3e731996ca84aa
+      internalID: -9208741560687725124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_47
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 104
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6fe84b54aaa263468c54e83a2e15fcd
+      internalID: -519440898269886658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_48
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 104
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82de07657bd06fa459c32b6cada0ab32
+      internalID: -7034188959393775733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_49
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 104
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6610fa780371542498edadc0c7dbeafc
+      internalID: 3698850845565382886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_50
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 104
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1b9ddc252d4fb54ea2221a1a331ebbf
+      internalID: 7954110845853782265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_51
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 70
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bc99d7d277125641bc86ed02c21ca03
+      internalID: -6412405588780278190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_52
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 70
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 467cc28660c22434c8052a55385b75d3
+      internalID: 321619137202112654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_53
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 70
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 943ad5eee83dba142a0afdd82f68429e
+      internalID: 9197769301940211271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_54
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 70
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec7dad6453d812d40996923c50f20811
+      internalID: 3475989269673936974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_55
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 70
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 384e3687d36ee194eaf22a925dbeb465
+      internalID: 2494133761963239148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_56
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 70
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25bb95fbe635965419696c23c622b726
+      internalID: 2889895820422433936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_57
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 70
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0367756cfb9ccb048a380ea6c0bc0b24
+      internalID: 8402659695867561016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_58
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 70
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1f697691f2f5e94bb106fe1b7fad51e
+      internalID: -4115724751519993269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_59
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 70
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffe5754fa74a4c24aa348ae04ce7f69e
+      internalID: 5485233656868429603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_60
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 70
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be8769e39c5b99248903093500b1a2ba
+      internalID: -8181450476632035122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_61
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 70
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4415df29a82f974eba6ee54b00d81bf
+      internalID: 8658541116782136717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_62
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 70
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 130a7a9d796df15449aeddbbad0c9ee6
+      internalID: 4574346997808051226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_63
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 70
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75ea299e19e9a8647a3c56161e019eb1
+      internalID: 972520098014294404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_64
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 36
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa07ef7fb3469f244988f60438152a35
+      internalID: -7115829858020460760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_65
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 36
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6131c7dcbe6ca204eb3e5ae93b34ca03
+      internalID: 1389925446245389912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_66
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 36
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5135e80456d6ad0469d84e604026ea97
+      internalID: -3242285091015493118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_67
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 36
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1d86bb410de59c42a6583fb5bdffc6b
+      internalID: 4987213936896521649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_68
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 36
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 723a662b2fada384ca1ef9a13ad7c067
+      internalID: -6635565950782365067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_69
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 36
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a824783316ff10e43a36357a64ac3d37
+      internalID: 667482155832630342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_70
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 36
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ace1937c4debfba498e18412418c7b35
+      internalID: -8732270121142971529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_71
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 36
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a939dddb7290524a8877fc0dada4baa
+      internalID: -8353405933439361617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_72
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 36
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 538a614b83520ef4a869a42ded918b97
+      internalID: 6921803779517946154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_73
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 36
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b9ae4e403fd8d749ba04a6285b9af83
+      internalID: 6371141342878609682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_74
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 36
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72e2493928ebbdf428066e94b856a43b
+      internalID: 986555424161235635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_75
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 36
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c00aca5b1c676c1428c201f1065d1c45
+      internalID: -4825319492356542316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_76
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 36
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8647c2ab64575a542861c4b53f8f7aa2
+      internalID: -495396952040944938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_77
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 2
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc130ad4bea87d44fb733df986dc6699
+      internalID: -8680570077148572517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_78
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 2
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cae28c0951800e8489b6fb63ab0725f1
+      internalID: -7164857430318434494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_79
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 2
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dfb8e05f3033764386069f758ff1f36
+      internalID: 1534948329569860846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_80
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 2
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75614a636002b1144959a96d68d11e9e
+      internalID: -6509624177369313656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_81
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 2
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bddd54745577bb43af390aa5538d278
+      internalID: -8580993916808361581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_82
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 2
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b7926dd9c6f79a4d8ce5526f44d8494
+      internalID: -1645388621914997891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_83
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 2
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f8653609c364fd42a66e8753763d400
+      internalID: 1151027598602865002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_84
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 2
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ee9f61ab81089a479b3658f17ef89b6
+      internalID: 4504510087093535597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_85
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 2
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a58017975f9a1046988359c296bd156
+      internalID: -6843519982100034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_86
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 2
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef142b8168f75544783deead9bb0e0c6
+      internalID: -7260326058014510148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MapsAlpha_87
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 2
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0a0d68b5d74bc840925a6caf85eb163
+      internalID: -3564620736738802775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: bf775af1ea69be04d8fd426ec61f9eac
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
