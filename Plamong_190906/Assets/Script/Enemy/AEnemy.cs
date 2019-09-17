@@ -41,7 +41,7 @@ public class AEnemy : MonoBehaviour
     public virtual void GetDamage() { }
     public virtual void Die() { }
 
-    // 어그로 표시 함수, 굳이 재정의 할 필요 없어보임
+    // 어그로 표시 함수
     public virtual IEnumerator DisplayMark()
     {
         yield return null;

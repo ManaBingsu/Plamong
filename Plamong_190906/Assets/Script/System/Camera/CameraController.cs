@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
+    public static CameraController mainCam;
     // 카메라 참조
     [SerializeField]
     private Camera cam;
@@ -39,8 +40,7 @@ public class CameraController : MonoBehaviour
     [SerializeField]
     private float cameraMoveSpeed;
     // 최초의 카메라 y 좌표
-    [SerializeField]
-    private float firstY;
+    public float firstY;
     // 화면 중심 좌표
     [SerializeField]
     private Vector3 screenCenter;
@@ -58,6 +58,8 @@ public class CameraController : MonoBehaviour
     private void Awake()
     {
         cam = transform.GetComponentInChildren<Camera>();
+        if (mainCam == null)
+            mainCam = GetComponent<CameraController>();
     }
 
     private void Start()

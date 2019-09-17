@@ -5,8 +5,9 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "PlayerData", menuName = "Player/PlayerData")]
 public class PlayerData : ScriptableObject
 {
-    // 함수 대리자
+    // 함수 대리자, UI 이벤트
     public delegate void EventHandler();
+
     // 스탯
     [Header("Stat")]
     [SerializeField]
@@ -18,6 +19,7 @@ public class PlayerData : ScriptableObject
         set
         {
             maxDurability = value;
+            EvDurability();
         }
     }
     [SerializeField]
@@ -29,6 +31,8 @@ public class PlayerData : ScriptableObject
         set
         {
             durability = value;
+            Debug.Log(durability);
+            EvDurability();
         }
     }
 

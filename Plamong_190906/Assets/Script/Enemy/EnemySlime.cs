@@ -14,7 +14,7 @@ public class EnemySlime : AEnemy
     {
         ManageState();
     }
-
+    
     public void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.tag == "Player")
@@ -71,28 +71,27 @@ public class EnemySlime : AEnemy
     public override IEnumerator Attack()
     {
         yield return null;
+        ChangeX();
         Debug.Log("공격함!");
         animator.SetTrigger("Attack");
+
+        int playerDura = PlayerController.player.playerData.Durability;
+        PlayerController.player.playerData.Durability = playerDura - 10;
+
         float time = 0f;
         while(time <= enemyData.AttackSpeed)
         {
             time += Time.deltaTime;
             yield return null;
         }
+
         IsAttack = false;
     }
     public override void Move()
     {
         if(target != null)
         {
-            if(target.position.x > transform.position.x)
-            {
-                spriteRenderer.flipX = true;
-            }
-            else
-            {
-                spriteRenderer.flipX = false;
-            }
+            ChangeX();
             Vector3 dir = (target.position - transform.position).normalized;
             transform.position += dir * enemyData.MoveSpeed * Time.deltaTime;
         }
@@ -106,4 +105,15 @@ public class EnemySlime : AEnemy
 
     }
 
+    public void ChangeX()
+    {
+        if (target.position.x > transform.position.x)
+        {
+            spriteRenderer.flipX = true;
+        }
+        else
+        {
+            spriteRenderer.flipX = false;
+        }
+    }
 }
