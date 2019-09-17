@@ -45,10 +45,15 @@ public class CameraController : MonoBehaviour
     [SerializeField]
     private Vector3 screenCenter;
 
-    // 플레이어 위치 트랜스폼
+    // 플레이어 위치 벡터
     [SerializeField]
     private Vector3 playerPos;
-
+    // 평지 트랜스폼
+    [SerializeField]
+    private Renderer plane;
+    // 카메라가 평지를 벗어낫는가
+    [SerializeField]
+    private float zLimit;
 
     // 카메라가 추적하는 대상
     [Header("Target mode setting")]
@@ -72,7 +77,9 @@ public class CameraController : MonoBehaviour
 
     private void LateUpdate()
     {
+        // 반드시 카메라 움직인 후 보더아웃 확인할것
         moveCamera();
+        LimitBorderOut();
     }
 
     // 카메라 orthographic 사이즈 조정
@@ -121,6 +128,7 @@ public class CameraController : MonoBehaviour
         //float Mag = Vector3.Magnitude(direction);
         float Mag = Vector3.Distance(mousePosition, screenCenter) * screenCorrection;
         // 범위 제한식
+
         if (Mag <= maxMouseDistance)
         {
             transform.position = Vector3.Lerp(playerPos, playerPos + direction, Time.fixedDeltaTime * cameraMoveSpeed);
@@ -139,5 +147,37 @@ public class CameraController : MonoBehaviour
     void FreeMode()
     {
 
+    }
+
+    // 카메라 반경을 제한합니다
+    void LimitBorderOut()
+    {
+        //height = 2f * cam.orthographicSize;
+        //width = height * cam.aspect;
+        float xPos = transform.position.x;
+        float zPos = transform.position.z;
+        // 오른쪽
+        if (transform.position.x + cam.orthographicSize * cam.aspect > plane.bounds.size.x / 2f)
+        {
+            xPos = plane.bounds.size.x / 2f - cam.orthographicSize * cam.aspect;
+        }
+        // 왼쪽
+        else if (transform.position.x - cam.orthographicSize * cam.aspect < -plane.bounds.size.x / 2f)
+        {
+            xPos = -plane.bounds.size.x / 2f + cam.orthographicSize * cam.aspect;
+        }
+        // 위쪽, 카메라가 45도 꺾여있어서 일일이 수정할수바께 없다..
+        if (transform.position.z + cam.orthographicSize > zLimit)
+        {
+            zPos = zLimit - cam.orthographicSize;
+        }
+        // 아래쪽, 카메라가 45도 꺾여있어서 일일이 수정할수바께 없다..
+        else if (transform.position.z - cam.orthographicSize < -zLimit)
+        {
+            zPos = -zLimit + cam.orthographicSize;
+        }
+
+        Vector3 limitPos = new Vector3(xPos, transform.position.y, zPos);
+        transform.position = limitPos;
     }
 }

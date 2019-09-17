@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         LoadPlayerData();
-        transform.position = new Vector3(0, 0, 0);
+        transform.position = new Vector3(0, 0, 4);
     }
 
     private void Update()
@@ -56,7 +56,6 @@ public class PlayerController : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
         int layerMask = 1 << LayerMask.NameToLayer("Plane");  // Player 레이어만 충돌 체크함
-        Debug.Log(layerMask);
         Vector3 targetPos;
         if (Physics.Raycast(ray, out hit, 100f, layerMask) && hit.collider.tag == "Ground")
         {

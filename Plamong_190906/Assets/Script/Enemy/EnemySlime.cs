@@ -72,7 +72,6 @@ public class EnemySlime : AEnemy
     {
         yield return null;
         ChangeX();
-        Debug.Log("공격함!");
         animator.SetTrigger("Attack");
 
         int playerDura = PlayerController.player.playerData.Durability;

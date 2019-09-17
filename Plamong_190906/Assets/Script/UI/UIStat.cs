@@ -35,7 +35,6 @@ public class UIStat : MonoBehaviour
 
     IEnumerator EffectDurability()
     {
-        Debug.Log("z");
         while(EffectDuraBar.fillAmount > DuraBar.fillAmount)
         {
             EffectDuraBar.fillAmount -= 0.005f;

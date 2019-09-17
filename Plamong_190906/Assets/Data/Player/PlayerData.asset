@@ -20,6 +20,6 @@ MonoBehaviour:
   titanium: 100
   damage: 10
   attackSpeed: 1
-  moveSpeed: 4
+  moveSpeed: 6
   castingSpeed: 1
   transformSpeed: 1

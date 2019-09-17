@@ -31,7 +31,6 @@ public class PlayerData : ScriptableObject
         set
         {
             durability = value;
-            Debug.Log(durability);
             EvDurability();
         }
     }
