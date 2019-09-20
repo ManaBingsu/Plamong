@@ -5,7 +5,7 @@ using UnityEngine;
 public class BulletInfo : MonoBehaviour
 {
     // 총알이 나가는 목표점
-    public Vector3 targetPos;
+    public Vector3 targetPosition;
     // 총알 속도
     public float moveVelocity;
     // 총알이 날아가는 시간
@@ -21,24 +21,27 @@ public class BulletInfo : MonoBehaviour
     {
         // 임시
         existTime = 1.0f;
-        //gameObject.SetActive(false);
+        gameObject.SetActive(false);
     }
 
-    public void Shot(Vector3 position, float velocity, ShotType shotT, SpriteType sprT)
+    public void Shot(Vector3 firstPos, Vector3 targetPos, float velocity, ShotType shotT, SpriteType sprT)
     {
-        targetPos = position;
+        targetPosition = targetPos;
         moveVelocity = velocity;
         shotType = shotT;
         sprT = spriteType;
-        transform.position = PlayerController.player.transform.position;
+        transform.position = firstPos;
 
         StartCoroutine(TranslateBullet());
     }
 
     public IEnumerator TranslateBullet()
     {
-        // 타겟의 방향 지정
-        Vector3 dir = (targetPos - transform.position).normalized;
+        // 타겟의 방향 지정, y 값이 동일해야한다.
+        targetPosition.y = 0.5f;
+        Vector3 myPos = transform.position;
+        myPos.y = 0.5f;
+        Vector3 dir = (targetPosition - myPos).normalized;
         // 정해진 범위만큼 날아가기
         float time = 0f;
         while(time < existTime)

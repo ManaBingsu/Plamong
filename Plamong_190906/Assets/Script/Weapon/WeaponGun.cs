@@ -9,7 +9,7 @@ public class WeaponGun : AbsWeapon
 
     public override IEnumerator MouseAttack1(Vector3 targetPos)
     {
-        bulletPulling.ShotBullet(targetPos, 30f, BulletInfo.ShotType.Straight, BulletInfo.SpriteType.Straight);
+        bulletPulling.ShotBullet(PlayerController.player.transform.position, targetPos, 30f, BulletInfo.ShotType.Straight, BulletInfo.SpriteType.Straight);
         yield return null;
     }
 }

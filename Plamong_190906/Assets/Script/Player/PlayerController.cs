@@ -94,6 +94,9 @@ public class PlayerController : MonoBehaviour
     // 플레이어 공격 제어
     void MouseAttack()
     {
+        if (IsActing)
+            return;
+
         RaycastHit hit;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
@@ -101,12 +104,19 @@ public class PlayerController : MonoBehaviour
         Vector3 targetPos;
         if (Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask) && hit.collider.tag == "Ground")
         {
+            // 오토마우스 방지
+            StartCoroutine(ActingDelay(0.05f));
+            // 타격점 지정
             targetPos = hit.point;
-
-            // 원거리 공격
+            // 노말 공격
             StartCoroutine(currentWeapon.MouseAttack1(targetPos));
-            // 근거리 공격
         }
+    }
+    IEnumerator ActingDelay(float time)
+    {
+        IsActing = true;
+        yield return new WaitForSeconds(time);
+        IsActing = false;
     }
 
 

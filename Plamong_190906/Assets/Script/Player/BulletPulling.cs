@@ -10,25 +10,27 @@ public class BulletPulling : MonoBehaviour
 
     private void Start()
     {
-        for(int i = 0; i < transform.childCount - 1; i++)
+        for(int i = 0; i < transform.childCount; i++)
         {
             bulletList.Add(transform.GetChild(i).GetComponent<BulletInfo>());
         }
-        maxIndex = bulletList.Count;
+        maxIndex = bulletList.Count - 1;
     }
 
-    public void ShotBullet(Vector3 position, float velocity, BulletInfo.ShotType shotT, BulletInfo.SpriteType sprT)
+    public void ShotBullet(Vector3 firstPos, Vector3 targetPos, float velocity, BulletInfo.ShotType shotT, BulletInfo.SpriteType sprT)
     {
-        if(index < maxIndex)
+        if(index <= maxIndex)
         {
             bulletList[index].gameObject.SetActive(true);
-            bulletList[index++].Shot(position, velocity, shotT, sprT);
+            bulletList[index].Shot(firstPos, targetPos, velocity, shotT, sprT);
+            index++;
         }
         else
         {
             index = 0;
             bulletList[index].gameObject.SetActive(true);
-            bulletList[index++].Shot(position, velocity, shotT, sprT);
+            bulletList[index].Shot(firstPos, targetPos, velocity, shotT, sprT);
+            index++;
         }
     }
 }

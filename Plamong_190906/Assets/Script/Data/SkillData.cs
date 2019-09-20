@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 [CreateAssetMenu(fileName = "SkillData", menuName = "Skill/SkillData")]
 public class SkillData : ScriptableObject
@@ -10,7 +9,7 @@ public class SkillData : ScriptableObject
     public Type weaponType;
 
     [Header("Info")]
-    public Image icon;
+    public Sprite icon;
     public string skillName;
     public int index;
 
