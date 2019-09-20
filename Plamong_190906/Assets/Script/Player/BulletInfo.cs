@@ -21,7 +21,7 @@ public class BulletInfo : MonoBehaviour
     {
         // 임시
         existTime = 1.0f;
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
     }
 
     public void Shot(Vector3 position, float velocity, ShotType shotT, SpriteType sprT)

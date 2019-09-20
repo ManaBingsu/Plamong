@@ -4,11 +4,22 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public static PlayerController player;
-    public BulletPulling bulletPulling;
+    public enum WeaponMode { Sword , Gun }
+    [SerializeField]
+    private WeaponMode weaponMode;
     
+    public static PlayerController player;
+
+    [SerializeField]
+    private AbsWeapon currentWeapon;
+
+    [SerializeField]
+    private List<AbsWeapon> weaponList;
+
     // 플레이어의 데이터
     public PlayerData playerData;
+    // (임시) 플레이어 행동 제어
+    public bool IsActing;
 
     private void Awake()
     {
@@ -19,12 +30,27 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         LoadPlayerData();
-        transform.position = new Vector3(0, 0, 4);
+        //transform.position = new Vector3(0, 0, 4);
     }
 
     private void Update()
     {
         Move();
+
+        // 임시 무기변경
+        if (Input.GetKeyUp(KeyCode.Tab))
+        {
+            if(weaponMode == WeaponMode.Sword)
+            {
+                weaponMode = WeaponMode.Gun;
+            }
+            else
+            {
+                weaponMode = WeaponMode.Sword;
+            }
+
+            currentWeapon = weaponList[(int)weaponMode];
+        }
 
         if(Input.GetMouseButtonDown(0))
         {
@@ -40,6 +66,10 @@ public class PlayerController : MonoBehaviour
     // 플레이어 움직임 제어
     void Move()
     {
+        // 임시 행동 제한
+        if (IsActing)
+            return;
+
         if(Input.GetKey(KeyCode.W))
             transform.position += new Vector3(0f, 0f, playerData.MoveSpeed * Time.deltaTime);
         if (Input.GetKey(KeyCode.A))
@@ -57,12 +87,15 @@ public class PlayerController : MonoBehaviour
 
         int layerMask = 1 << LayerMask.NameToLayer("Plane");  // Player 레이어만 충돌 체크함
         Vector3 targetPos;
-        if (Physics.Raycast(ray, out hit, 100f, layerMask) && hit.collider.tag == "Ground")
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask) && hit.collider.tag == "Ground")
         {
             targetPos = hit.point;
 
-            bulletPulling.ShotBullet(targetPos, 30f, BulletInfo.ShotType.Straight, BulletInfo.SpriteType.Straight);
+            // 원거리 공격
+            StartCoroutine(currentWeapon.MouseAttack1(targetPos));
+            // 근거리 공격
         }
-
     }
+
+
 }

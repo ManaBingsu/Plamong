@@ -20,7 +20,14 @@ public class CameraController : MonoBehaviour
     private int screenHeight;
     [SerializeField]
     private bool IsFullScreen;
-
+    //게임 화면 상의 카메라 크기
+    //height = 2f * cam.orthographicSize;
+    //width = height * cam.aspect;
+    private float camHeight;
+    private float camWidth;
+    // 미니맵 사이즈
+    [SerializeField]
+    private float minimapSize;
 
     // 마우스 움직임 함수 대리자 선언
     private delegate void MoveCamera();
@@ -41,19 +48,31 @@ public class CameraController : MonoBehaviour
     private float cameraMoveSpeed;
     // 최초의 카메라 y 좌표
     public float firstY;
-    // 화면 중심 좌표
+    // 카메라가 z로 이동할때 제한 거리
     [SerializeField]
-    private Vector3 screenCenter;
+    private float zLimit;
+    // Freemode 시야 옮김 예민도
+    [SerializeField]
+    private float freeModeSensivity;
+    // Freemode 시야 옮김 범위
+    [SerializeField]
+    private float freeModeRange;
+    // 화면 중심 좌표
+    private Vector3 screenCenter;   
 
+    [Header("Reference")]
     // 플레이어 위치 벡터
     [SerializeField]
     private Vector3 playerPos;
-    // 평지 트랜스폼
+    // 평지 Render
     [SerializeField]
     private Renderer plane;
-    // 카메라가 평지를 벗어낫는가
+    // 평지 Transform
     [SerializeField]
-    private float zLimit;
+    private Transform planeTransform;
+    [SerializeField]
+    private Camera minimapCam;
+
 
     // 카메라가 추적하는 대상
     [Header("Target mode setting")]
@@ -75,10 +94,22 @@ public class CameraController : MonoBehaviour
         moveCamera = new MoveCamera(MouseMode);
     }
 
+    private void Update()
+    {
+        // 카메라 변경, 임시
+        if (Input.GetKeyUp(KeyCode.F1))
+            SetCameraMode(CameraMode.Mouse);
+        if (Input.GetKeyUp(KeyCode.F2))
+            SetCameraMode(CameraMode.Player);
+        if (Input.GetKeyUp(KeyCode.F3))
+            SetCameraMode(CameraMode.Free);
+    }
+
     private void LateUpdate()
     {
         // 반드시 카메라 움직인 후 보더아웃 확인할것
         moveCamera();
+        MoveToMinimapPos();
         LimitBorderOut();
     }
 
@@ -91,10 +122,18 @@ public class CameraController : MonoBehaviour
     // 화면 해상도 조절
     void SetResoultion(int width, int height, bool IsFull)
     {
+        // 게임 해상도
         screenWidth = width;
         screenHeight = height;
         IsFullScreen = IsFull;
+        // 게임 내 카메라와 관련된 값들
         screenCenter = new Vector3(Screen.width, 0f, Screen.height) * 0.5f;
+        // 미니맵 크기 재조정
+        SetMinimapSize();
+
+        camHeight = cam.orthographicSize;
+        camWidth = camHeight * cam.aspect;
+
         Screen.SetResolution(screenWidth, screenHeight, IsFullScreen);
     }
     // 카메라의 모드를 설정합니다.
@@ -106,6 +145,7 @@ public class CameraController : MonoBehaviour
                 moveCamera = new MoveCamera(MouseMode);
                 break;
             case CameraMode.Player:
+                transform.position = PlayerController.player.transform.position;
                 moveCamera = new MoveCamera(TargetMode);
                 break;
             case CameraMode.Free:
@@ -138,46 +178,90 @@ public class CameraController : MonoBehaviour
             transform.position = Vector3.Lerp(playerPos, playerPos + direction.normalized * maxMouseDistance, Time.fixedDeltaTime * cameraMoveSpeed);
         }
     }
-    // (미구현)플레이어 중심으로 카메라를 제어합니다.
+    // 플레이어 중심으로 카메라를 제어합니다.
     void TargetMode()
     {
-
+        // 플레이어의 위치 갱신
+        playerPos = PlayerController.player.transform.position;
+        transform.position = Vector3.Lerp(transform.position, playerPos, Time.fixedDeltaTime * cameraMoveSpeed * 3f);
     }
-    // (미구현)완전히 자유로운 시점입니다.
+    // 완전히 자유로운 시점입니다.
     void FreeMode()
     {
+        // 만약 카메라 끝 반경에 닿을시 카메라 이동
+        Vector2 mousePos = Camera.main.ScreenToViewportPoint(Input.mousePosition);
+        if (mousePos.x > 1 - freeModeRange)
+        {
+            transform.Translate(Vector3.right * freeModeSensivity * Time.deltaTime);
+        }
+        else if(mousePos.x < freeModeRange)
+        {
+            transform.Translate(Vector3.left * freeModeSensivity * Time.deltaTime);
+        }
 
+        if(mousePos.y > 1 - freeModeRange)
+        {
+            transform.Translate(Vector3.forward * freeModeSensivity * Time.deltaTime);
+        }
+        else if (mousePos.y < freeModeRange)
+        {
+            transform.Translate(Vector3.back * freeModeSensivity * Time.deltaTime);
+        }
     }
-
     // 카메라 반경을 제한합니다
     void LimitBorderOut()
     {
-        //height = 2f * cam.orthographicSize;
-        //width = height * cam.aspect;
-        float xPos = transform.position.x;
-        float zPos = transform.position.z;
+        // 만약 제한이 안될 경우 플레이어를 따라다닌다.
+        float camXPos = transform.position.x;
+        float camZPos = transform.position.z;
         // 오른쪽
-        if (transform.position.x + cam.orthographicSize * cam.aspect > plane.bounds.size.x / 2f)
+        if (transform.position.x + camWidth > plane.bounds.size.x / 2f)
         {
-            xPos = plane.bounds.size.x / 2f - cam.orthographicSize * cam.aspect;
+            camXPos = plane.bounds.size.x / 2f - cam.orthographicSize * cam.aspect;
         }
         // 왼쪽
-        else if (transform.position.x - cam.orthographicSize * cam.aspect < -plane.bounds.size.x / 2f)
+        else if (transform.position.x - camWidth < -plane.bounds.size.x / 2f)
         {
-            xPos = -plane.bounds.size.x / 2f + cam.orthographicSize * cam.aspect;
+            camXPos = -plane.bounds.size.x / 2f + cam.orthographicSize * cam.aspect;
         }
         // 위쪽, 카메라가 45도 꺾여있어서 일일이 수정할수바께 없다..
-        if (transform.position.z + cam.orthographicSize > zLimit)
+        if (transform.position.z + camHeight > zLimit)
         {
-            zPos = zLimit - cam.orthographicSize;
+            camZPos = zLimit - cam.orthographicSize;
         }
         // 아래쪽, 카메라가 45도 꺾여있어서 일일이 수정할수바께 없다..
-        else if (transform.position.z - cam.orthographicSize < -zLimit)
+        else if (transform.position.z - camHeight < -zLimit)
         {
-            zPos = -zLimit + cam.orthographicSize;
+            camZPos = -zLimit + cam.orthographicSize;
         }
 
-        Vector3 limitPos = new Vector3(xPos, transform.position.y, zPos);
+        Vector3 limitPos = new Vector3(camXPos, transform.position.y, camZPos);
         transform.position = limitPos;
+    }
+    // 미니맵 클릭 시 그쪽으로 시야전환
+    void MoveToMinimapPos()
+    {
+        if(Input.GetMouseButton(0))
+        {
+            RaycastHit hit;
+            Ray ray = minimapCam.ScreenPointToRay(Input.mousePosition);
+            int layerMask = 1 << LayerMask.NameToLayer("Mark");  // Mark 레이어만 충돌 체크함
+            Vector3 targetPos;
+
+            if (Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask) && hit.collider.tag == "Ground")
+            {
+                targetPos = hit.point;
+                targetPos.y = 0f;
+                transform.position = Vector3.Lerp(transform.position, targetPos, 1f);
+            }
+        }
+    }
+    // 미니맵의 크기를 지정합니다.
+    void SetMinimapSize()
+    {
+        float size = minimapSize * ((float)screenWidth / 1920f);
+        minimapCam.pixelRect = new Rect(screenWidth - (32f * ((float)screenWidth / 1920f)) - size, 
+                                        screenHeight - (32f * ((float)screenWidth / 1920f)) - size, 
+                                        size, size);
     }
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemySlime : AEnemy
+public class EnemySlime : AbsEnemy
 {
     private void Awake()
     {

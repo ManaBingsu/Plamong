@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AEnemy : MonoBehaviour
+public class AbsEnemy : MonoBehaviour
 {
     // 몬스터의 기본적 데이터
     [SerializeField]
