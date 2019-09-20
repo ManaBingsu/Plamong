@@ -25,10 +25,9 @@ public class PlayerController : MonoBehaviour
             EvWeapon();
         }
     }
-
+    // 무기Info 참조
     [SerializeField]
-    private List<AbsWeapon> weaponList;
-
+    private WeaponInfo weaponInfo;
     // 플레이어의 데이터
     public PlayerData playerData;
     // (임시) 플레이어 행동 제어
@@ -49,7 +48,6 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         Move();
-
         // 임시 무기변경
         if (Input.GetKeyUp(KeyCode.Tab))
         {
@@ -62,7 +60,9 @@ public class PlayerController : MonoBehaviour
                 weaponMode = WeaponMode.Sword;
             }
 
-            CurrentWeapon = weaponList[(int)weaponMode];
+            currentWeapon.gameObject.SetActive(false);
+            CurrentWeapon = weaponInfo.weaponList[(int)weaponMode];
+            currentWeapon.gameObject.SetActive(true);
         }
 
         if(Input.GetMouseButtonDown(0))
@@ -70,7 +70,6 @@ public class PlayerController : MonoBehaviour
             MouseAttack();
         }
     }
-
     // 플레이어의 데이터를 게임매니저로부터 불러와 clone화 시킴
     void LoadPlayerData()
     {

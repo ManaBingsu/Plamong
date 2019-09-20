@@ -59,7 +59,6 @@ public class CameraController : MonoBehaviour
     private float freeModeRange;
     // 화면 중심 좌표
     private Vector3 screenCenter;   
-
     [Header("Reference")]
     // 플레이어 위치 벡터
     [SerializeField]
@@ -74,7 +73,6 @@ public class CameraController : MonoBehaviour
     private Camera minimapCam;
     [SerializeField]
     private Transform minimapMarker;
-
 
     // 카메라가 추적하는 대상
     [Header("Target mode setting")]
