@@ -1,2 +1,2 @@
 # Plamong
-Chonnam univ game design capstone project
+Chonnam university game design capstone project
