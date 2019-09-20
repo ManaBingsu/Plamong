@@ -4,14 +4,27 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    // 플레이어 이벤트 처리자
+    public delegate void EventHandler();
+
     public enum WeaponMode { Sword , Gun }
-    [SerializeField]
-    private WeaponMode weaponMode;
+
+    public WeaponMode weaponMode;
     
     public static PlayerController player;
-
+    // 현재 착용하고 있는 무기와 이벤트
+    public event EventHandler EvWeapon;
     [SerializeField]
     private AbsWeapon currentWeapon;
+    public AbsWeapon CurrentWeapon
+    {
+        get { return CurrentWeapon; }
+        set
+        {
+            currentWeapon = value;
+            EvWeapon();
+        }
+    }
 
     [SerializeField]
     private List<AbsWeapon> weaponList;
@@ -49,7 +62,7 @@ public class PlayerController : MonoBehaviour
                 weaponMode = WeaponMode.Sword;
             }
 
-            currentWeapon = weaponList[(int)weaponMode];
+            CurrentWeapon = weaponList[(int)weaponMode];
         }
 
         if(Input.GetMouseButtonDown(0))

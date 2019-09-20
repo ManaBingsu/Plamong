@@ -72,6 +72,8 @@ public class CameraController : MonoBehaviour
     private Transform planeTransform;
     [SerializeField]
     private Camera minimapCam;
+    [SerializeField]
+    private Transform minimapMarker;
 
 
     // 카메라가 추적하는 대상
@@ -107,7 +109,7 @@ public class CameraController : MonoBehaviour
 
     private void LateUpdate()
     {
-        // 반드시 카메라 움직인 후 보더아웃 확인할것
+        // 반드시 카메라 움직인 후 보더아웃 확인할것 서순 중요
         moveCamera();
         MoveToMinimapPos();
         LimitBorderOut();
@@ -130,6 +132,8 @@ public class CameraController : MonoBehaviour
         screenCenter = new Vector3(Screen.width, 0f, Screen.height) * 0.5f;
         // 미니맵 크기 재조정
         SetMinimapSize();
+        // 미니맵 마커 크기 재조정
+        SetMarkerSize();
 
         camHeight = cam.orthographicSize;
         camWidth = camHeight * cam.aspect;
@@ -256,12 +260,20 @@ public class CameraController : MonoBehaviour
             }
         }
     }
-    // 미니맵의 크기를 지정합니다.
+    // 미니맵의 크기를 지원하는 최대 해상도에 따라 보정합니다. (현재 1920)
     void SetMinimapSize()
     {
         float size = minimapSize * ((float)screenWidth / 1920f);
         minimapCam.pixelRect = new Rect(screenWidth - (32f * ((float)screenWidth / 1920f)) - size, 
                                         screenHeight - (32f * ((float)screenWidth / 1920f)) - size, 
                                         size, size);
+    }
+    // 미니맵에 표시되는 카메라 마커 크기 비율 조정, 기준은 16:9  3:1
+    void SetMarkerSize()
+    {
+        Vector3 markScale = minimapMarker.localScale;
+        Vector3 scale = new Vector3(((float)screenWidth / screenHeight) * (9f / 16f), 1f, ((float)screenHeight / screenWidth) * (16f / 9f));
+        minimapMarker.localScale = new Vector3(markScale.x * scale.x, 1f, markScale.z * scale.z);
+
     }
 }
