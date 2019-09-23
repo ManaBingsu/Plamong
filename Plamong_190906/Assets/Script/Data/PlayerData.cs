@@ -94,6 +94,19 @@ public class PlayerData : ScriptableObject
         }
     }
 
+    [SerializeField]
+    private int skillPoint;
+    public event EventHandler EvSkillPoint;
+    public int SkillPoint
+    {
+        get { return skillPoint; }
+        set
+        {
+            skillPoint = value;
+            EvSkillPoint();
+        }
+    }
+
     [Header("Speed stat")]
     [SerializeField]
     private float attackSpeed;

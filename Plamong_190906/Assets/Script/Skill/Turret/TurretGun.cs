@@ -16,6 +16,26 @@ public class TurretGun : AbsTurret
     // 공격 대상 고유 번호
     [SerializeField]
     private int targetID;
+    public AbsEnemy Target
+    {
+        get { return target; }
+        set
+        {
+            if (value != null)
+            {
+                target = value;
+                targetID = target.gameObject.GetInstanceID();
+                coAttack = StartCoroutine(Attack());
+            }
+            else
+            {
+                if (coAttack != null)
+                    StopCoroutine(coAttack);
+                target = null;
+                targetID = 0;
+            }
+        }
+    }
     // 공격 담당 코루틴, 정지해야댐
     [SerializeField]
     private Coroutine coAttack;
@@ -36,27 +56,7 @@ public class TurretGun : AbsTurret
         
     }
 
-    public AbsEnemy Target
-    {
-        get { return target; }
-        set
-        {
-            if (value != null)
-            {
-                target = value;
-                targetID = target.gameObject.GetInstanceID();
-                Debug.Log("공격시작 : " + target);
-                coAttack = StartCoroutine(Attack());
-            }
-            else
-            {
-                if(coAttack != null)
-                    StopCoroutine(coAttack);
-                target = null;
-                targetID = 0;
-            }
-        }
-    }
+
     // 적 인식
     private void OnTriggerStay(Collider col)
     {
@@ -72,10 +72,6 @@ public class TurretGun : AbsTurret
     // 적 대상 변경
     private void OnTriggerExit(Collider col)
     {
-        if(col.tag == "Enemy")
-        {
-            Debug.Log(col.gameObject.GetInstanceID());
-        }
 
         if (col.tag == "Enemy" && col.isTrigger == false && col.gameObject.GetInstanceID() == targetID)
         {

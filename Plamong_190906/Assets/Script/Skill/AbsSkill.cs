@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class AbsSkill : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    // 스킬 사용가능 여부
+    [SerializeField]
+    private bool isLearn;
+    public bool IsLearn
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        get { return isLearn; }
+        set
+        {
+            isLearn = value;
+        }
     }
 }

@@ -81,7 +81,7 @@ public class PlayerController : MonoBehaviour
         // 임시 행동 제한
         if (IsActing)
             return;
-
+        // 임시
         if(Input.GetKey(KeyCode.W))
             transform.position += new Vector3(0f, 0f, playerData.MoveSpeed * Time.deltaTime);
         if (Input.GetKey(KeyCode.A))
@@ -119,5 +119,5 @@ public class PlayerController : MonoBehaviour
         IsActing = false;
     }
 
-
+    
 }

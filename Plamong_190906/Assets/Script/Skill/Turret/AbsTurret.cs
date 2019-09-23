@@ -4,5 +4,6 @@ using UnityEngine;
 
 public abstract class AbsTurret : MonoBehaviour
 {
-    
+    [SerializeField]
+    private int hp;
 }

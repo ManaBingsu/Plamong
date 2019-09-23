@@ -24,6 +24,16 @@ public class BulletInfo : MonoBehaviour
         gameObject.SetActive(false);
     }
 
+    private void OnTriggerEnter(Collider col)
+    {
+        if(col.gameObject.tag == "Enemy" && col.isTrigger == false)
+        {
+            AbsEnemy enemy = col.gameObject.GetComponent<AbsEnemy>();
+            enemy.GetCrowdControl(this.transform, AbsEnemy.CrowdControl.KnockBack, 0.1f);
+            gameObject.SetActive(false);
+        }
+    }
+
     public void Shot(Vector3 firstPos, Vector3 targetPos, float velocity, ShotType shotT, SpriteType sprT)
     {
         targetPosition = targetPos;

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9173987d7981ab54c8d23a1a9b33e4b8, type: 3}
-  m_Name: EnemySlimeData
+  m_Name: EnemyDataSlime
   m_EditorClassIdentifier: 
   maxHP: 100
   hP: 100
