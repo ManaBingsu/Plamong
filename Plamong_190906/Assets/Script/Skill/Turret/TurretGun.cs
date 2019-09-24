@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class TurretGun : AbsTurret
 {
+    // 데미지
+    [SerializeField]
+    private int bulletDamage;
     // 공격이 나가는 곳
     [SerializeField]
     private Transform gun;
@@ -87,7 +90,7 @@ public class TurretGun : AbsTurret
             Vector3 firstPos = transform.position;
             firstPos.y = 0.5f;
             targetPos.y = 0.5f;
-            bulletPulling.ShotBullet(firstPos, targetPos, bulletVelociy, BulletInfo.ShotType.Straight, BulletInfo.SpriteType.Trace);
+            bulletPulling.ShotBullet(bulletDamage, firstPos, targetPos, bulletVelociy, BulletInfo.ShotType.Straight, BulletInfo.SpriteType.Trace);
             yield return DelayTime;
         }
     }

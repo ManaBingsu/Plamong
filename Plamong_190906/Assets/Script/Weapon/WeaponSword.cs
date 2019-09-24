@@ -30,7 +30,7 @@ public class WeaponSword : AbsWeapon
 
     }
 
-    public override IEnumerator MouseAttack1(Vector3 targetPos)
+    public override IEnumerator MouseAttack1(int damage, Vector3 targetPos)
     {
         player.IsActing = true;
         yield return StartCoroutine(DashToAttackDirection(targetPos));

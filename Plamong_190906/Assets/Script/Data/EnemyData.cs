@@ -5,6 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "EnemyData", menuName = "Enemy/EnemyData")]
 public class EnemyData : ScriptableObject
 {
+    public delegate void EventHandler();
+
     [Header("Stat")]
     [SerializeField]
     private int maxHP;
@@ -19,12 +21,23 @@ public class EnemyData : ScriptableObject
 
     [SerializeField]
     private int hP;
+    public event EventHandler EvHP;
+    public event EventHandler EvDie;
     public int HP
     {
         get { return hP; }
         set
         {
-            hP = value;
+            if (value < 1)
+            {
+                hP = 0;
+                EvDie();
+            }
+            else
+            {
+                hP = value;
+                //EvHP();
+            }
         }
     }
 

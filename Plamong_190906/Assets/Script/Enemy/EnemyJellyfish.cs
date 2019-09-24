@@ -3,9 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class EnemyJellyfish : AbsEnemy
+public class EnemyJellyfish : MonoBehaviour
 {
-    public enum State { Idle, Move, Attack }
+    /*
+    [SerializeField]
+    private UIDamagePulling damagePulling;
+
+    public enum State { Move, Attack }
     public State state;
 
     [SerializeField]
@@ -13,15 +17,20 @@ public class EnemyJellyfish : AbsEnemy
 
     private void Start()
     {
+        // 적 데이터 복제
+        LoadEnemyData();
+        // 죽음 이벤트 추가
+        enemyData.EvDie += new EnemyData.EventHandler(Die);
+        // 데미지 풀링 참조
+        damagePulling = UIDamagePulling.damagePulling;
+        // 연구실로 ㄱㄱ
+        target = LaboratoryInfo.laboratory.transform;
         originRotation = spriteTransform.rotation.eulerAngles;
-        nav.SetDestination(PlayerController.player.transform.position);
     }
     private void Update()
     {
         ManageState();
         CallFunctionByState();
-
-        Debug.Log(nav.destination);
     }
 
     private void LateUpdate()
@@ -32,9 +41,6 @@ public class EnemyJellyfish : AbsEnemy
 
     private void OnTriggerStay(Collider col)
     {
-        if (target != null)
-            return;
-
         if(col.gameObject.tag == "Player" && ccState == CrowdControl.Idle)
         {
             target = col.transform;
@@ -45,17 +51,23 @@ public class EnemyJellyfish : AbsEnemy
     {
         if (col.gameObject.tag == "Player")
         {
-            target = null;
+            target = LaboratoryInfo.laboratory.transform;
             nav.ResetPath();
         }
+    }
+
+    public void SetTarget(Transform value)
+    {
+
     }
 
     // 행동을 관리해주는 함수
     public override void ManageState()
     {
-        if(target)
+        if (target)
         {
-            if(GetTargetDistance() < attackDistance)
+            targetDistance = GetTargetDistance();
+            if (targetDistance < attackDistance)
             {
                 state = State.Attack;
             }
@@ -66,7 +78,8 @@ public class EnemyJellyfish : AbsEnemy
         }
         else
         {
-            state = State.Idle;
+            state = State.Move;
+            target = LaboratoryInfo.laboratory.transform;
         }
     }
     // 행동에 따라 함수를 실행
@@ -74,9 +87,6 @@ public class EnemyJellyfish : AbsEnemy
     {
         switch(state)
         {
-            case State.Idle:
-                Move(transform.position);
-                break;
             case State.Move:
                 Move(target.position);
                 break;
@@ -87,7 +97,12 @@ public class EnemyJellyfish : AbsEnemy
     }
     // 상태에 따른 행동들
     // 공격
-    public override IEnumerator Attack() { yield return null; }
+    public override IEnumerator Attack()
+    {
+        nav.isStopped = true;
+        yield return new WaitForSeconds(2.0f);
+        nav.isStopped = false;
+    }
     // 이동
     public override void Move(Vector3 targetPos)
     {
@@ -96,11 +111,16 @@ public class EnemyJellyfish : AbsEnemy
     // 데미지 받음
     public override void GetDamage(int value)
     {
+        // 데미지 주기
         enemyData.HP -= value;
+        // 데미지 표기
+        damagePulling.DisplayDamage(transform.position, value);
     }
     // CC기 받음
     public override void GetCrowdControl(Transform attacker, CrowdControl cc, float ccTime)
     {
+        nav.SetDestination(attacker.position);
+
         if(cc == CrowdControl.KnockBack)
         {
             if (ccState == CrowdControl.KnockBack)
@@ -123,7 +143,10 @@ public class EnemyJellyfish : AbsEnemy
         }
     }
     // 죽음
-    public override void Die() { }
+    public override void Die()
+    {
+        Debug.Log("Die");
+    }
     // 어그로 표시 함수
     public override IEnumerator DisplayMark() { yield return null; }
     // CC기
@@ -143,10 +166,10 @@ public class EnemyJellyfish : AbsEnemy
         {
             time += Time.deltaTime;
             nav.velocity = (myPos - targetPos).normalized * backSpeed;
-            Debug.Log(Vector3.Magnitude((myPos - targetPos).normalized * backSpeed));
             yield return null;
         }
         ccState = CrowdControl.Idle;
         nav.isStopped = false;
     }
+    */
 }

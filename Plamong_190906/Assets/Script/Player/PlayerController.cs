@@ -109,9 +109,10 @@ public class PlayerController : MonoBehaviour
             // 타격점 지정
             targetPos = hit.point;
             // 노말 공격
-            StartCoroutine(currentWeapon.MouseAttack1(targetPos));
+            StartCoroutine(currentWeapon.MouseAttack1(playerData.Damage, targetPos));
         }
     }
+
     IEnumerator ActingDelay(float time)
     {
         IsActing = true;
