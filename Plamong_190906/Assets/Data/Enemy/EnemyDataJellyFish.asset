@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: EnemyDataJellyFish
   m_EditorClassIdentifier: 
   maxHP: 50
-  hP: 50
+  hP: 1000
   damage: 5
   attackSpeed: 1
-  moveSpeed: 3
+  moveSpeed: 300
   castingSpeed: 1

@@ -4,12 +4,24 @@ using UnityEngine;
 
 public class WeaponGun : AbsWeapon
 {
+
+
     [SerializeField]
     private BulletPulling bulletPulling;
 
-    public override IEnumerator MouseAttack1(int damage, Vector3 targetPos)
+    public override IEnumerator MouseAttack1(int damage, Transform attackerTransform, Vector3 targetPos)
     {
-        bulletPulling.ShotBullet(damage, PlayerController.player.transform.position, targetPos, 30f, BulletInfo.ShotType.Straight, BulletInfo.SpriteType.Straight);
-        yield return null;
+        if (isDelay)
+            yield break;
+        else
+        {
+            isDelay = true;
+            StartCoroutine(DelayTimer());
+            bulletPulling.ShotBullet(damage, PlayerController.player.transform, targetPos, 30f, BulletInfo.ShotType.Straight, BulletInfo.SpriteType.Straight, AbsEnemy.CrowdControl.KnockBack, 1f, 0f);
+            yield return null;
+        }
+       
     }
+
+   
 }

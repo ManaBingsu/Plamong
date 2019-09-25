@@ -15,6 +15,8 @@ public class WeaponSword : AbsWeapon
     private Transform rangeTransform;
     [SerializeField]
     private Vector3 targetY;
+    [SerializeField]
+    private WeaponRangeObj rangeObj;
 
     // 공격중임
     [SerializeField]
@@ -25,13 +27,10 @@ public class WeaponSword : AbsWeapon
         player = PlayerController.player;
     }
 
-    private void Update()
+    public override IEnumerator MouseAttack1(int damage, Transform attackerTransform, Vector3 targetPos)
     {
-
-    }
-
-    public override IEnumerator MouseAttack1(int damage, Vector3 targetPos)
-    {
+        rangeObj.damage = damage;
+        rangeObj.attackerTransform = attackerTransform;
         player.IsActing = true;
         yield return StartCoroutine(DashToAttackDirection(targetPos));
         player.IsActing = false;
@@ -40,6 +39,11 @@ public class WeaponSword : AbsWeapon
 
     public IEnumerator DashToAttackDirection(Vector3 targetPos)
     {
+        if (isDelay)
+            yield break;
+
+        isDelay = true;
+        StartCoroutine(DelayTimer());
         Vector3 direction = (targetPos - player.transform.position).normalized;
         float dashTime = 0.05f;
         float rushVelocity = 12f;
@@ -64,6 +68,7 @@ public class WeaponSword : AbsWeapon
     
     IEnumerator SwingSword(Vector3 targetPos)
     {
+        rangeObj.gameObject.SetActive(true);
         Vector3 targetY = (targetPos - player.transform.position).normalized * 360f;
         rangeTransform.rotation = Quaternion.LookRotation(targetY);
         // origin rotation value
@@ -81,7 +86,7 @@ public class WeaponSword : AbsWeapon
             rangeTransform.rotation = Quaternion.Euler(new Vector3(0f, player.transform.rotation.y + rot, 0f));
             yield return null;
         }
-
+        rangeObj.gameObject.SetActive(false);
         yield return null;
     }
 }

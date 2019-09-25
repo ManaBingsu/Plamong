@@ -51,6 +51,9 @@ public class PlayerController : MonoBehaviour
         // 임시 무기변경
         if (Input.GetKeyUp(KeyCode.Tab))
         {
+            if (IsActing)
+                return;
+
             if(weaponMode == WeaponMode.Sword)
             {
                 weaponMode = WeaponMode.Gun;
@@ -59,13 +62,13 @@ public class PlayerController : MonoBehaviour
             {
                 weaponMode = WeaponMode.Sword;
             }
-
+            currentWeapon.isDelay = false;
             currentWeapon.gameObject.SetActive(false);
             CurrentWeapon = weaponInfo.weaponList[(int)weaponMode];
             currentWeapon.gameObject.SetActive(true);
         }
 
-        if(Input.GetMouseButtonDown(0))
+        if(Input.GetMouseButton(0))
         {
             MouseAttack();
         }
@@ -105,11 +108,11 @@ public class PlayerController : MonoBehaviour
         if (Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask) && hit.collider.tag == "Ground")
         {
             // 오토마우스 방지
-            StartCoroutine(ActingDelay(0.05f));
+            //StartCoroutine(ActingDelay(currentWeapon.delay));
             // 타격점 지정
             targetPos = hit.point;
             // 노말 공격
-            StartCoroutine(currentWeapon.MouseAttack1(playerData.Damage, targetPos));
+            StartCoroutine(currentWeapon.MouseAttack1(playerData.Damage, transform, targetPos));
         }
     }
 

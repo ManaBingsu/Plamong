@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TurretGun : AbsTurret
 {
+    /*
     // 데미지
     [SerializeField]
     private int bulletDamage;
@@ -93,5 +94,5 @@ public class TurretGun : AbsTurret
             bulletPulling.ShotBullet(bulletDamage, firstPos, targetPos, bulletVelociy, BulletInfo.ShotType.Straight, BulletInfo.SpriteType.Trace);
             yield return DelayTime;
         }
-    }
+    }*/
 }

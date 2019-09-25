@@ -23,6 +23,7 @@ public class EnemyData : ScriptableObject
     private int hP;
     public event EventHandler EvHP;
     public event EventHandler EvDie;
+
     public int HP
     {
         get { return hP; }
@@ -31,7 +32,7 @@ public class EnemyData : ScriptableObject
             if (value < 1)
             {
                 hP = 0;
-                EvDie();
+                //EvDie();
             }
             else
             {
