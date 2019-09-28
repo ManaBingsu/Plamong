@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UIDamagePulling : MonoBehaviour
+public class UIDamagePooling : MonoBehaviour
 {
     [SerializeField]
-    public static UIDamagePulling damagePulling;
+    public static UIDamagePooling damagePulling;
 
     public List<UIDamage> damageList;
     public int index;

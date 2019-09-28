@@ -25,6 +25,7 @@ public class WeaponSword : AbsWeapon
     private void Start()
     {
         player = PlayerController.player;
+        rangeObj.gameObject.SetActive(false);
     }
 
     public override IEnumerator MouseAttack1(int damage, Transform attackerTransform, Vector3 targetPos)

@@ -75,7 +75,7 @@ public abstract class AbsEnemy : MonoBehaviour
     protected Vector3 originRotation;
     [Header("UI Reference")]
     [SerializeField]
-    protected UIDamagePulling damageUI;
+    protected UIDamagePooling damageUI;
 
     protected virtual void Awake()
     {
@@ -91,7 +91,7 @@ public abstract class AbsEnemy : MonoBehaviour
     {
         LoadEnemyData();
         // UI Damage 참조
-        damageUI = UIDamagePulling.damagePulling;
+        damageUI = UIDamagePooling.damagePulling;
 
         // 회전값 고정
         originRotation = spriteTransform.rotation.eulerAngles;

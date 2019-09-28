@@ -12,6 +12,7 @@ public class EnemyPladog : AbsEnemy
     protected override void Start()
     {
         base.Start();
+        enemyData.EvDie += new EnemyData.EventHandler(Die);
     }
     protected override void Update()
     {
@@ -57,7 +58,6 @@ public class EnemyPladog : AbsEnemy
         {
             target = LaboratoryInfo.laboratory.transform;
             nav.destination = target.position;
-            Debug.Log("타겟 없음, 연구실로");
         }
         // 타겟이 사망할 경우
         else if (target.gameObject.activeSelf == false)
@@ -146,7 +146,10 @@ public class EnemyPladog : AbsEnemy
 
     public override IEnumerator Attack() { yield return null; }
 
-    public override void Die() { }
+    public override void Die()
+    {
+        Destroy(this.gameObject);
+    }
 
     public override void GetDamage(int value, Transform attacker)
     {

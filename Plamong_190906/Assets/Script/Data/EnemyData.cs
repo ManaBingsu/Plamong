@@ -32,7 +32,7 @@ public class EnemyData : ScriptableObject
             if (value < 1)
             {
                 hP = 0;
-                //EvDie();
+                EvDie();
             }
             else
             {

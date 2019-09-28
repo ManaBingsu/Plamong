@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletPulling : MonoBehaviour
+public class BulletPooling : MonoBehaviour
 {
     public List<BulletInfo> bulletList;
     public int index;

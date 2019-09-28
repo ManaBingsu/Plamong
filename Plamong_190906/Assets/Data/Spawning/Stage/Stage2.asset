@@ -9,12 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9173987d7981ab54c8d23a1a9b33e4b8, type: 3}
-  m_Name: EnemyDataJellyFish
-  m_EditorClassIdentifier: 
-  maxHP: 50
-  hP: 1000
-  damage: 5
-  attackSpeed: 1
-  moveSpeed: 300
-  castingSpeed: 1
+  m_Script: {fileID: 0}
+  m_Name: Stage2
+  m_EditorClassIdentifier: Assembly-CSharp::StageData
+  stageRestTime: 0
+  allMonster: {fileID: 0}
+  waveDataList:
+  - {fileID: 11400000, guid: 8faea06d2a3d0324ea0fcf03a46a8fec, type: 2}

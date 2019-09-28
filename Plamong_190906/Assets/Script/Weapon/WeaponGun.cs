@@ -7,7 +7,7 @@ public class WeaponGun : AbsWeapon
 
 
     [SerializeField]
-    private BulletPulling bulletPulling;
+    private BulletPooling bulletPulling;
 
     public override IEnumerator MouseAttack1(int damage, Transform attackerTransform, Vector3 targetPos)
     {

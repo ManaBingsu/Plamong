@@ -39,9 +39,7 @@ public class UIDamage : MonoBehaviour
         while(time <= 0.5f)
         {
             time += Time.deltaTime;
-            pos = Camera.main.WorldToScreenPoint(targetTransform.position);
             transform.position = new Vector3(pos.x, pos.y + speed * Time.deltaTime, pos.z);
-            Debug.Log(pos);
             speed += upVelocity;
 
             yield return YieldInstructionCache.WaitForFixedUpdate;

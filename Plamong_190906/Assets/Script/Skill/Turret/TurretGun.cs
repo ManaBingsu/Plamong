@@ -4,95 +4,106 @@ using UnityEngine;
 
 public class TurretGun : AbsTurret
 {
-    /*
-    // 데미지
     [SerializeField]
-    private int bulletDamage;
-    // 공격이 나가는 곳
+    private List<Transform> enemyList;
+
     [SerializeField]
-    private Transform gun;
-    // 총알 공급 클래스
+    private float targetCheckDelay;
+    private WaitForSeconds targetCheckDelayTime;
+
     [SerializeField]
-    private BulletPulling bulletPulling;
-    // 공격 대상
-    [SerializeField]
-    private AbsEnemy target;
-    // 공격 대상 고유 번호
-    [SerializeField]
-    private int targetID;
-    public AbsEnemy Target
-    {
-        get { return target; }
-        set
-        {
-            if (value != null)
-            {
-                target = value;
-                targetID = target.gameObject.GetInstanceID();
-                coAttack = StartCoroutine(Attack());
-            }
-            else
-            {
-                if (coAttack != null)
-                    StopCoroutine(coAttack);
-                target = null;
-                targetID = 0;
-            }
-        }
-    }
-    // 공격 담당 코루틴, 정지해야댐
-    [SerializeField]
-    private Coroutine coAttack;
-    // 공격 딜레이
-    [SerializeField]
-    private float attackDelay;
-    // 딜레이 시간
-    [SerializeField]
-    private WaitForSeconds DelayTime;
-    // 터렛 총알 속도
-    [SerializeField]
-    private float bulletVelociy;
+    private BulletPooling bulletPooling;
 
     private void Start()
     {
-        DelayTime = new WaitForSeconds(attackDelay);
-        // 적의 트리거 콜라이더 무시
-        
+        StartCoroutine(SetTarget());
     }
 
-
-    // 적 인식
-    private void OnTriggerStay(Collider col)
+    private void OnTriggerEnter(Collider col)
     {
-        if(col.tag == "Enemy" && col.isTrigger == false)
+        if (!enemyList.Contains(col.transform) && col.CompareTag("Enemy"))
         {
-            if (Target == null)
-            {
-                Target = col.GetComponent<AbsEnemy>();
-            }
-
+            enemyList.Add(col.transform);
         }
     }
-    // 적 대상 변경
+
     private void OnTriggerExit(Collider col)
     {
-
-        if (col.tag == "Enemy" && col.isTrigger == false && col.gameObject.GetInstanceID() == targetID)
+        if (enemyList.Contains(col.transform) && col.CompareTag("Enemy"))
         {
-            Target = null;
+            enemyList.Remove(col.transform);
         }
     }
 
-    IEnumerator Attack()
+    IEnumerator SetTarget()
     {
-        while(true)
+        targetCheckDelayTime = new WaitForSeconds(turretData.AttackDelay);
+
+        while (true)
         {
-            Vector3 targetPos = Target.transform.position;
-            Vector3 firstPos = transform.position;
-            firstPos.y = 0.5f;
-            targetPos.y = 0.5f;
-            bulletPulling.ShotBullet(bulletDamage, firstPos, targetPos, bulletVelociy, BulletInfo.ShotType.Straight, BulletInfo.SpriteType.Trace);
-            yield return DelayTime;
+            if (enemyList.Count > 0)
+            {
+                float minDistance = 9999f;
+                foreach (Transform enemy in enemyList)
+                {
+                    if(enemy != null)
+                    {
+                        float targetDistance = GetTargetDistance(enemy);
+                        if (targetDistance < minDistance)
+                        {
+                            minDistance = targetDistance;
+                            target = enemy;
+                        }
+                    }
+                    else
+                    {
+                        continue;
+                    }
+
+                }
+            }
+            else
+            {
+                target = null;
+            }
+
+            if(target != null)
+            {
+                RotateGun();
+                AttackTarget();
+            }
+
+            yield return targetCheckDelayTime;
         }
-    }*/
+    }
+
+    void AttackTarget()
+    {
+        bulletPooling.ShotBullet
+            (turretData.Damage, transform, target.position, 50f,
+            BulletInfo.ShotType.Straight, BulletInfo.SpriteType.Straight,
+            AbsEnemy.CrowdControl.KnockBack, 1.5f, 10f);
+    }
+
+    void RotateGun()
+    {
+        Vector3 targetPos = new Vector3(target.position.x, 0f, target.position.z);
+        Vector3 myPos = new Vector3(transform.position.x, 0f, transform.position.z);
+
+        Vector3 v = (targetPos - myPos).normalized;
+
+        float direction = Mathf.Atan2(v.z, v.x) * Mathf.Rad2Deg;
+
+        gunTransform.localRotation = Quaternion.Euler(new Vector3(0f, 0f, direction));
+    }
+
+    public float GetTargetDistance(Transform tg)
+    {
+        Vector3 targetPos = new Vector3(tg.position.x, 0f, tg.position.z);
+        Vector3 myPos = new Vector3(transform.position.x, 0f, transform.position.z);
+
+        float distance = Vector3.Distance(myPos, targetPos);
+        return distance;
+    }
+
 }
