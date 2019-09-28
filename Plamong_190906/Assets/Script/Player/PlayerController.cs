@@ -37,6 +37,7 @@ public class PlayerController : MonoBehaviour
     {
         if (player == null)
             player = this;
+
     }
 
     private void Start()

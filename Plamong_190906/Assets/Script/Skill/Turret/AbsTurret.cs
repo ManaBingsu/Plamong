@@ -8,7 +8,7 @@ public abstract class AbsTurret : MonoBehaviour
     public State state;
 
     [SerializeField]
-    protected TurretData turretData;
+    public TurretData turretData;
     
     // 회전해야 할 총
     [SerializeField]
@@ -16,6 +16,39 @@ public abstract class AbsTurret : MonoBehaviour
     // 공격 대상
     [SerializeField]
     protected Transform target;
+    // 분해 중
+    [SerializeField]
+    protected bool isDecomp;
+    // 상호작용 거리
+    
+
+    // 분해 중인 코루틴
+    [SerializeField]
+    public Coroutine cortnDecomp;
+
+    protected virtual void Start()
+    {
+        StartCoroutine(ConsumeTitanium());
+    }
+
+    public IEnumerator Decomposition()
+    {
+        float time = 0f;
+        while(time < turretData.DecompTime)
+        {
+            time += Time.deltaTime;
+            yield return null;
+        }
+        PlayerController.player.playerData.Titanium += turretData.Titanium;
+        Destroy(this.gameObject);
+    }
+    // 코스트 소비
+    public IEnumerator ConsumeTitanium()
+    {
+        yield return null;
+        yield return null;
+        PlayerController.player.playerData.Titanium -= turretData.Titanium;
+    }
     /*
     // 타겟을 관리해주는 함수
     protected abstract void ManageTarget();

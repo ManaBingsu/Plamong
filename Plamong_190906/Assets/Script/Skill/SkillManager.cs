@@ -4,15 +4,56 @@ using UnityEngine;
 
 public class SkillManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public TurretChecker turretChecker;
+    public List<GameObject> turretList;
+    public float spawnDistance;
+
+    private void Update()
     {
-        
+        if(Input.GetKeyUp(KeyCode.Alpha1))
+        {
+            CheckSpawnTurret(0);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    void CheckSpawnTurret(int index)
     {
-        
+        // 자원이 가능한지 확인
+        TurretData tData = turretList[index].GetComponent<AbsTurret>().turretData;
+        if (PlayerController.player.playerData.Titanium - tData.Titanium < 0)
+        {
+            return;
+        }
+
+        RaycastHit hit;
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        int layerMask = 1 << LayerMask.NameToLayer("Plane");
+        Vector3 targetPos;
+
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask) && hit.collider.tag == "Ground")
+        {
+            targetPos = hit.point;
+
+            Transform pTransform = PlayerController.player.transform;
+            Vector3 playerPos = new Vector3(pTransform.position.x, 0f, pTransform.position.z);
+            Vector3 mousePos = targetPos;
+            mousePos.y = 0f;
+            Vector3 direction = playerPos + (mousePos - playerPos).normalized * spawnDistance;
+
+            turretChecker.gameObject.SetActive(true);
+            turretChecker.transform.position = direction;
+        }
+
+
+    }
+
+    public void SpawnDistance(Vector3 pos, int index)
+    {
+        if (turretChecker.isBuildPos)
+        {
+            Instantiate(turretList[index], pos, Quaternion.identity);
+        }
+
+        turretChecker.gameObject.SetActive(false);
     }
 }

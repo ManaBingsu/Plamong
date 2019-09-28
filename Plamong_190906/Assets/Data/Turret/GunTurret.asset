@@ -13,5 +13,8 @@ MonoBehaviour:
   m_Name: GunTurret
   m_EditorClassIdentifier: 
   hp: 100
+  titanium: 10
   damage: 3
   attackDelay: 0.25
+  decompTime: 1.5
+  interactDistance: 4

@@ -200,7 +200,10 @@ public class EnemyPladog : AbsEnemy
 
     public override IEnumerator KnockBack(Transform attacker, float ccTime, float power)
     {
-        nav.isStopped = true;
+        if (gameObject.activeSelf == false)
+            yield break;
+
+        //nav.isStopped = true;
 
         Vector3 firstPos = new Vector3(transform.position.x, 0f, transform.position.y);
         Vector3 targetPos = new Vector3(attacker.position.x, 0f, transform.position.y);
@@ -215,7 +218,7 @@ public class EnemyPladog : AbsEnemy
             time += Time.deltaTime;
             nav.velocity = direction * knockBackSpeed * Time.deltaTime;
         }
-        nav.isStopped = false;
+        //nav.isStopped = false;
     }
 
     public override IEnumerator Slow(float ccTime, float power)

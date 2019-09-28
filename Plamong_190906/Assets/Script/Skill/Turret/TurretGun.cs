@@ -14,8 +14,9 @@ public class TurretGun : AbsTurret
     [SerializeField]
     private BulletPooling bulletPooling;
 
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
         StartCoroutine(SetTarget());
     }
 
@@ -24,6 +25,33 @@ public class TurretGun : AbsTurret
         if (!enemyList.Contains(col.transform) && col.CompareTag("Enemy"))
         {
             enemyList.Add(col.transform);
+        }
+    }
+
+    private void OnTriggerStay(Collider col)
+    {
+        if(col.CompareTag("Player"))
+        {
+            float distance = GetTargetDistance(col.transform);
+            if(distance < turretData.InteractDistance)
+            {
+                if(Input.GetKeyUp(KeyCode.BackQuote))
+                {
+                    // 분해
+                    if(cortnDecomp == null)
+                    {
+                        cortnDecomp = StartCoroutine(Decomposition());
+                        Debug.Log("분해 시작");
+                    }
+                    else
+                    // 분해 취소
+                    {
+                        StopCoroutine(cortnDecomp);
+                        cortnDecomp = null;
+                        Debug.Log("분해 취소");
+                    }
+                }
+            }
         }
     }
 
@@ -37,10 +65,14 @@ public class TurretGun : AbsTurret
 
     IEnumerator SetTarget()
     {
+        
         targetCheckDelayTime = new WaitForSeconds(turretData.AttackDelay);
 
         while (true)
         {
+            if (isDecomp)
+                continue;
+
             if (enemyList.Count > 0)
             {
                 float minDistance = 9999f;

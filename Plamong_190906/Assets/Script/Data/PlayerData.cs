@@ -35,8 +35,6 @@ public class PlayerData : ScriptableObject
         }
     }
 
-    private int hp;
-
     [SerializeField]
     private int maxPower;
     public event EventHandler EvMaxPower;
@@ -57,6 +55,7 @@ public class PlayerData : ScriptableObject
         set
         {
             power = value;
+            EvPower();
         }
     }
 
@@ -80,6 +79,7 @@ public class PlayerData : ScriptableObject
         set
         {
             titanium = value;
+            EvTitanium();
         }
     }
 

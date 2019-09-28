@@ -17,6 +17,17 @@ public class TurretData : ScriptableObject
     }
 
     [SerializeField]
+    protected int titanium;
+    public int Titanium
+    {
+        get { return titanium; }
+        set
+        {
+            titanium = value;
+        }
+    }
+
+    [SerializeField]
     protected int damage;
     public int Damage
     {
@@ -35,6 +46,28 @@ public class TurretData : ScriptableObject
         set
         {
             attackDelay = value;
+        }
+    }
+
+    [SerializeField]
+    protected float decompTime;
+    public float DecompTime
+    {
+        get { return decompTime; }
+        set
+        {
+            decompTime = value;
+        }
+    }
+
+    [SerializeField]
+    protected float interactDistance;
+    public float InteractDistance
+    {
+        get { return interactDistance; }
+        set
+        {
+            interactDistance = value;
         }
     }
 }
