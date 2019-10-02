@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    // 회전해야 할 총
+    [SerializeField]
+    protected List<Transform> weaponTransform;
     // 플레이어 이벤트 처리자
     public delegate void EventHandler();
 
@@ -32,18 +35,22 @@ public class PlayerController : MonoBehaviour
     public PlayerData playerData;
     // (임시) 플레이어 행동 제어
     public bool IsActing;
+    [Header("UI Value")]
+    [SerializeField]
+    protected Color dmgColor;
+
 
     private void Awake()
     {
         if (player == null)
             player = this;
-
     }
 
     private void Start()
     {
         LoadPlayerData();
-        //transform.position = new Vector3(0, 0, 4);
+        //데미지 이벤트 추가
+        playerData.EvValueDurability += new PlayerData.EventValueHandler(DisplayDamage);
     }
 
     private void Update()
@@ -63,13 +70,17 @@ public class PlayerController : MonoBehaviour
             {
                 weaponMode = WeaponMode.Sword;
             }
+            // 이전 무기값 초기화
             currentWeapon.isDelay = false;
             currentWeapon.gameObject.SetActive(false);
+            // 무기 변경됨
             CurrentWeapon = weaponInfo.weaponList[(int)weaponMode];
             currentWeapon.gameObject.SetActive(true);
         }
 
-        if(Input.GetMouseButton(0))
+        RotateWeapon((int)weaponMode);
+
+        if (Input.GetMouseButton(0))
         {
             MouseAttack();
         }
@@ -95,6 +106,19 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
             transform.position += new Vector3(playerData.MoveSpeed * Time.deltaTime, 0f, 0f);
     }
+
+    void GetDamage(int value)
+    {
+        playerData.Durability = playerData.Durability - value;
+    }
+
+    void DisplayDamage(int dmg)
+    {
+        Vector3 dmgPos = transform.position;
+        dmgPos.y += 1f;
+        UIDamagePooling.damagePulling.DisplayDamage(dmgPos, dmg, dmgColor, 16);
+    }
+
     // 플레이어 공격 제어
     void MouseAttack()
     {
@@ -124,5 +148,23 @@ public class PlayerController : MonoBehaviour
         IsActing = false;
     }
 
-    
+    void RotateWeapon(int n)
+    {
+        RaycastHit hit;
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        int layerMask = 1 << LayerMask.NameToLayer("Plane");  // Player 레이어만 충돌 체크함
+        Vector3 targetPos;
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask) && hit.collider.tag == "Ground")
+        {
+            targetPos = hit.point;
+            Vector3 hitPos = new Vector3(targetPos.x, 0f, targetPos.y);
+            Vector3 myPos = new Vector3(transform.position.x, 0f, transform.position.z);
+
+            Vector3 v = (targetPos - myPos).normalized;
+
+            float direction = Mathf.Atan2(v.z, v.x) * Mathf.Rad2Deg;
+
+            weaponTransform[n].localRotation = Quaternion.Euler(new Vector3(45f, 0f, direction));
+        }     
+    }
 }

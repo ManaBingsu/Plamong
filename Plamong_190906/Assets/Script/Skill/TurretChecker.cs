@@ -24,14 +24,12 @@ public class TurretChecker : MonoBehaviour
         {
             isBuildPos = false;
             skill.SpawnDistance(transform.position, skillNum);
-            Debug.Log("플레이어 충돌");
             gameObject.SetActive(false);
         }
         if (col.gameObject.CompareTag("Enemy") && col.isTrigger == false)
         {
             isBuildPos = false;
             skill.SpawnDistance(transform.position, skillNum);
-            Debug.Log("적 충돌");
             gameObject.SetActive(false);
         }
     }

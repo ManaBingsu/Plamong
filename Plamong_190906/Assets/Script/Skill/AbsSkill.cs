@@ -2,17 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AbsSkill : MonoBehaviour
+public abstract class AbsSkill : MonoBehaviour
 {
-    // 스킬 사용가능 여부
-    [SerializeField]
-    private bool isLearn;
-    public bool IsLearn
+    [Header("Info")]
+    public int index;
+    public SkillData skillData;
+
+    protected virtual void Start()
     {
-        get { return isLearn; }
-        set
-        {
-            isLearn = value;
-        }
+        skillData = Instantiate(SkillDataStore.skillDataStore.skillDataList[index]) as SkillData;
     }
+
+    public abstract void ActivateSkill();
+    
 }

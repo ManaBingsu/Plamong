@@ -13,6 +13,7 @@ public class EnemyPladog : AbsEnemy
     {
         base.Start();
         enemyData.EvDie += new EnemyData.EventHandler(Die);
+        enemyData.EvValueHP += new EnemyData.EventValueHandler(DisplayDamage);
     }
     protected override void Update()
     {
@@ -127,14 +128,16 @@ public class EnemyPladog : AbsEnemy
         switch (state)
         {
             case State.Idle:
-                nav.isStopped = true;
+                //nav.isStopped = true;
                 break;
             case State.Move:
-                nav.isStopped = false;
+                //nav.isStopped = false;
                 Move();
                 break;
             case State.Attack:
-                nav.isStopped = true;
+                if (isAttack)
+                    break;
+                StartCoroutine(Attack());
                 break;
         }
     }
@@ -144,7 +147,22 @@ public class EnemyPladog : AbsEnemy
         nav.destination = target.position;
     }
 
-    public override IEnumerator Attack() { yield return null; }
+    public override IEnumerator Attack()
+    {
+        isAttack = true;
+        nav.isStopped = true;
+        // 공격 모션
+        yield return new WaitForSeconds(0.3f);
+        // 공격 모션 후에도 그 자리에 있으면 데미지
+        if(attackDistance > GetTargetDistance(target))
+        {
+            PlayerController.player.playerData.Durability -= enemyData.Damage;
+        }
+        yield return new WaitForSeconds(0.5f);
+        isAttack = false;
+        nav.isStopped = false;
+        yield return null;
+    }
 
     public override void Die()
     {
@@ -154,7 +172,6 @@ public class EnemyPladog : AbsEnemy
     public override void GetDamage(int value, Transform attacker)
     {
         enemyData.HP -= value;
-        DisplayDamage(value, Color.red, 14f);
         // 어그로 타이머 초기화
 
         // 처음으로 어그로를 끌린다면 맨 처음 대상 락온
@@ -174,9 +191,9 @@ public class EnemyPladog : AbsEnemy
         }
     }
 
-    public override void DisplayDamage(int value, Color color, float size)
+    public override void DisplayDamage(int value)
     {
-        damageUI.DisplayDamage(transform, value);
+        UIDamagePooling.damagePulling.DisplayDamage(transform.position, value, dmgColor, 14);
     }
 
     public override void GetCrowdControl(CrowdControl cc, Transform attacker, float ccTime, float power)

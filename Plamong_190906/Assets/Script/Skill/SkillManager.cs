@@ -4,16 +4,27 @@ using UnityEngine;
 
 public class SkillManager : MonoBehaviour
 {
+    public enum TurretName { GunTurret }
+    public enum SwordName { Strike }
+    public enum GunName { GunTurret }
+
     public TurretChecker turretChecker;
     public List<GameObject> turretList;
     public float spawnDistance;
+
+    public List<AbsSkill> skillList;
 
     private void Update()
     {
         if(Input.GetKeyUp(KeyCode.Alpha1))
         {
-            CheckSpawnTurret(0);
+            ActivateSkill(0);
         }
+    }
+
+    void ActivateSkill(int num)
+    {
+        skillList[num].ActivateSkill();
     }
 
     void CheckSpawnTurret(int index)

@@ -15,6 +15,9 @@ public abstract class AbsEnemy : MonoBehaviour
     public State state;
     // 걸릴 수 있는 cc기 종류\
     public CrowdControl ccState;
+    [Header("Bool")]
+    [SerializeField]
+    protected bool isAttack;
 
     [Header("Value")]
     // 공식-> moveSpeed = enemyData.MoveSpeed * slowPower * Time.deltaTime;
@@ -73,9 +76,9 @@ public abstract class AbsEnemy : MonoBehaviour
     // 스프라이트 옵젝이 유지해야하는 회전값
     [SerializeField]
     protected Vector3 originRotation;
-    [Header("UI Reference")]
+    [Header("UI Value")]
     [SerializeField]
-    protected UIDamagePooling damageUI;
+    protected Color dmgColor;
 
     protected virtual void Awake()
     {
@@ -90,8 +93,6 @@ public abstract class AbsEnemy : MonoBehaviour
     protected virtual void Start()
     {
         LoadEnemyData();
-        // UI Damage 참조
-        damageUI = UIDamagePooling.damagePulling;
 
         // 회전값 고정
         originRotation = spriteTransform.rotation.eulerAngles;
@@ -137,7 +138,7 @@ public abstract class AbsEnemy : MonoBehaviour
     // 데미지를 받음
     public abstract void GetDamage(int value, Transform attacker);
     // 받은 데미지 표시
-    public abstract void DisplayDamage(int value, Color color, float size);
+    public abstract void DisplayDamage(int value);
     // CC : 넉백
     public abstract IEnumerator KnockBack(Transform attacker, float ccTime, float power);
     // CC : 둔화

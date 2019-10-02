@@ -11,4 +11,6 @@ public class LaboratoryInfo : MonoBehaviour
         if (laboratory == null)
             laboratory = this;
     }
+
+
 }

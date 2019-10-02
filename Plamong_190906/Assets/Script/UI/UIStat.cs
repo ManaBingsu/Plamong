@@ -18,12 +18,11 @@ public class UIStat : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(LoadPlayerData());
+        LoadPlayerData();
     }
 
-    IEnumerator LoadPlayerData()
+    void LoadPlayerData()
     {
-        yield return null;
         playerData = PlayerController.player.playerData;
 
         playerData.EvDurability += new PlayerData.EventHandler(DisplayDurability);

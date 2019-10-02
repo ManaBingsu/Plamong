@@ -196,9 +196,10 @@ MonoBehaviour:
   enemyData: {fileID: 11400000, guid: 42a5d4c9649aadb4f88196476c0c6bfd, type: 2}
   state: 0
   ccState: 3
+  isAttack: 0
   target: {fileID: 0}
   targetDistance: 0
-  attackDistance: 0.9
+  attackDistance: 2.2
   laborAttackDistance: 8
   isAttackLaboratory: 0
   isAggro: 0
@@ -211,7 +212,7 @@ MonoBehaviour:
   stateMark: {fileID: 0}
   spriteTransform: {fileID: 0}
   originRotation: {x: 0, y: 0, z: 0}
-  damageUI: {fileID: 0}
+  dmgColor: {r: 0, g: 0.84033537, b: 1, a: 1}
 --- !u!1 &870388144829941568
 GameObject:
   m_ObjectHideFlags: 0

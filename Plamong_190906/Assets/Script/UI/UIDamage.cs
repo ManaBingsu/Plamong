@@ -27,10 +27,12 @@ public class UIDamage : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    public IEnumerator DisplayDamage(Transform targetTransform, int value)
+    public IEnumerator DisplayDamage(Vector3 targetPosition, int value, Color color, int size)
     {
         dmgText.text = value.ToString();
-        Vector3 pos = Camera.main.WorldToScreenPoint(targetTransform.position);
+        dmgText.color = color;
+        dmgText.fontSize = size;
+        Vector3 pos = Camera.main.WorldToScreenPoint(targetPosition);
         transform.position = pos;
 
         float speed = 32f;

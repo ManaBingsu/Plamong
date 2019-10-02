@@ -26,7 +26,7 @@ public class UIDamagePooling : MonoBehaviour
         maxIndex = damageList.Count - 1;
     }
 
-    public void DisplayDamage(Transform targetTransform, int value)
+    public void DisplayDamage(Vector3 targetTransform, int value, Color color, int size)
     {
         if (index <= maxIndex)
         {
@@ -35,7 +35,7 @@ public class UIDamagePooling : MonoBehaviour
             if (damageList[index].cortn != null)
                 StopCoroutine(damageList[index].cortn);
 
-            damageList[index].cortn = StartCoroutine(damageList[index].DisplayDamage(targetTransform, value));
+            damageList[index].cortn = StartCoroutine(damageList[index].DisplayDamage(targetTransform, value, color, size));
             index++;
         }
         else
@@ -46,7 +46,7 @@ public class UIDamagePooling : MonoBehaviour
             if (damageList[index].cortn != null)
                 StopCoroutine(damageList[index].cortn);
 
-            damageList[index].cortn = StartCoroutine(damageList[index].DisplayDamage(targetTransform, value));
+            damageList[index].cortn = StartCoroutine(damageList[index].DisplayDamage(targetTransform, value, color, size));
             index++;
         }
     }

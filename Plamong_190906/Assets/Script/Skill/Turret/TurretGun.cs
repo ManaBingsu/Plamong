@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TurretGun : AbsTurret
 {
+
     [SerializeField]
     private List<Transform> enemyList;
 

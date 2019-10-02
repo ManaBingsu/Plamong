@@ -37,7 +37,6 @@ public class StageManager : MonoBehaviour
         foreach(StageData stg in stageList)
         {
             // 스테이지 실행
-            Debug.Log(n + " 번째 스테이지 시작");
             yield return StartCoroutine(WaveDispencer(stg));
             // 스테이지 몬스터가 정리될 때까지 정지
             /*while (isRest == true)
@@ -45,8 +44,6 @@ public class StageManager : MonoBehaviour
             // 스테이지 끝난 후 쉬는 시간
             yield return new WaitForSeconds(stg.stageRestTime);
         }
-
-        Debug.Log("모든 스테이지 끝!!!!!!!!!!!!!");
     }
 
     public IEnumerator WaveDispencer(StageData stg)
@@ -55,10 +52,8 @@ public class StageManager : MonoBehaviour
         foreach (WaveData wvData in stg.waveDataList)
         {
             // 웨이브 실행
-            Debug.Log(n + " 번째 웨이브 시작");
             yield return StartCoroutine(LevelDispencer(wvData.levelList));
             // 웨이브 끝난 후 쉬는 시간
-            Debug.Log(n++ + " 번째 웨이브 쉬는 시간");
             yield return new WaitForSeconds(wvData.waveRestTime);
         }
     }

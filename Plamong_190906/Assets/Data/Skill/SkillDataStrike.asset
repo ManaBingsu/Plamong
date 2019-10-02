@@ -15,8 +15,10 @@ MonoBehaviour:
   weaponType: 0
   icon: {fileID: 21300000, guid: 656a9aa88cec9ab43b38f7c57de5451c, type: 3}
   skillName: "\uC804\uBC29\uC704 \uD0C0\uACA9"
-  index: 0
+  index: 1
   video: {fileID: 32900000, guid: 84076678011821e4185cb36284b7d86e, type: 3}
+  isLearned: 0
+  fowardSkillList: []
   maxLevel: 3
   level: 0
   script: "\uAC15\uB825\uD55C \uC77C\uACA9\uC744 \uB0A0\uB9BD\uB2C8\uB2E4.\n\uC801\uC911\uD55C

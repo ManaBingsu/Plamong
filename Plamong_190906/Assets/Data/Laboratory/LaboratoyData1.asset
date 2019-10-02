@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 059068ba039c0c9498dc265eccc33f99, type: 3}
+  m_Name: LaboratoyData1
+  m_EditorClassIdentifier: 
+  phaseList:
+  - phaseMaxHp: 400
+    bonusAbility: 1.2
+  - phaseMaxHp: 200
+    bonusAbility: 1.5
+  - phaseMaxHp: 100
+    bonusAbility: 2
+  maxHp: 500
+  hp: 500

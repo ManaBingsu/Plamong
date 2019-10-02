@@ -19,7 +19,7 @@ MonoBehaviour:
   maxTitanium: 100
   titanium: 100
   damage: 10
-  skillPoint: 2
+  skillPoint: 16
   attackSpeed: 1
   moveSpeed: 6
   castingSpeed: 1

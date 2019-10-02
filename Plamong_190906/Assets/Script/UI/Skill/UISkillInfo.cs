@@ -79,4 +79,12 @@ public class UISkillInfo : MonoBehaviour
     {
         skillPoint.text = playerData.SkillPoint.ToString();
     }
+
+    public void LearnSkill()
+    {
+        if(selectSkill != null)
+        {
+            selectSkill.skillData.Level += 1;
+        }
+    }
 }

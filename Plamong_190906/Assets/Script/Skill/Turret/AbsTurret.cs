@@ -7,6 +7,9 @@ public abstract class AbsTurret : MonoBehaviour
     public enum State { Idle, Attack, Die }
     public State state;
 
+
+    public SkillData skillData;
+
     [SerializeField]
     public TurretData turretData;
     
@@ -26,8 +29,14 @@ public abstract class AbsTurret : MonoBehaviour
     [SerializeField]
     public Coroutine cortnDecomp;
 
+    private void Awake()
+    {
+        //skillData = Instantiate(skillData) as SkillData;
+    }
+
     protected virtual void Start()
     {
+        //skillData = Instantiate(skillData) as SkillData;
         StartCoroutine(ConsumeTitanium());
     }
 

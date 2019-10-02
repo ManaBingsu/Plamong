@@ -6,6 +6,7 @@ using UnityEngine;
 public class EnemyData : ScriptableObject
 {
     public delegate void EventHandler();
+    public delegate void EventValueHandler(int value);
 
     [Header("Stat")]
     [SerializeField]
@@ -23,7 +24,7 @@ public class EnemyData : ScriptableObject
     private int hP;
     public event EventHandler EvHP;
     public event EventHandler EvDie;
-
+    public event EventValueHandler EvValueHP;
     public int HP
     {
         get { return hP; }
@@ -31,11 +32,13 @@ public class EnemyData : ScriptableObject
         {
             if (value < 1)
             {
+                EvValueHP(hP - value);
                 hP = 0;
                 EvDie();
             }
             else
             {
+                EvValueHP(hP - value);
                 hP = value;
                 //EvHP();
             }

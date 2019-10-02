@@ -7,6 +7,8 @@ public class PlayerData : ScriptableObject
 {
     // 함수 대리자, UI 이벤트
     public delegate void EventHandler();
+    // 함수 대리자, 데미지 이벤트
+    public delegate void EventValueHandler(int x);
 
     // 스탯
     [Header("Stat")]
@@ -25,11 +27,20 @@ public class PlayerData : ScriptableObject
     [SerializeField]
     private int durability;
     public event EventHandler EvDurability;
+    public event EventValueHandler EvValueDurability;
     public int Durability
     {
         get { return durability; }
         set
         {
+            if (value < 1)
+            {
+                EvValueDurability(durability - value);
+                durability = 0;
+                //EvDie();
+            }
+
+            EvValueDurability(durability - value);
             durability = value;
             EvDurability();
         }
