@@ -16,5 +16,5 @@ MonoBehaviour:
   hP: 25
   damage: 5
   attackSpeed: 1
-  moveSpeed: 300
+  moveSpeed: 250
   castingSpeed: 1

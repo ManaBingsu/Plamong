@@ -13,6 +13,9 @@ public class WeaponSword : AbsWeapon
     [Header("Reference")]
     [SerializeField]
     private Transform rangeTransform;
+    //Sword Sprite
+    [SerializeField]
+    private Transform swordTransform;
     [SerializeField]
     private Vector3 targetY;
     [SerializeField]
@@ -77,6 +80,10 @@ public class WeaponSword : AbsWeapon
         //최소, 최대 회전값
         float firstRotation = originRot.y + swingRange;
         float lastRotation = originRot.y - swingRange;
+        // origin sprite value
+        Vector3 originSprRot = swordTransform.rotation.eulerAngles;
+        float fisrtSprRot = originSprRot.z + swingRange;
+        float lastSprRot = originSprRot.z - swingRange;
 
         float time = 0f;
 
@@ -84,10 +91,13 @@ public class WeaponSword : AbsWeapon
         {
             time += Time.deltaTime * swingSpeed;
             float rot = Mathf.Lerp(firstRotation, lastRotation, time);
+            float sprRot = Mathf.Lerp(fisrtSprRot, lastSprRot, time);
             rangeTransform.rotation = Quaternion.Euler(new Vector3(0f, player.transform.rotation.y + rot, 0f));
+            swordTransform.rotation = Quaternion.Euler(new Vector3(45f, 0f , player.transform.rotation.z + sprRot));
             yield return null;
         }
         rangeObj.gameObject.SetActive(false);
+        swordTransform.rotation = Quaternion.Euler(originSprRot);
         yield return null;
     }
 }

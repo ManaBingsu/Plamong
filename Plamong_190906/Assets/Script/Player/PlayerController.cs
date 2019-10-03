@@ -4,16 +4,11 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    // 회전해야 할 총
-    [SerializeField]
-    protected List<Transform> weaponTransform;
     // 플레이어 이벤트 처리자
     public delegate void EventHandler();
-
     public enum WeaponMode { Sword , Gun }
-
     public WeaponMode weaponMode;
-    
+    // 플레이어 싱글톤  
     public static PlayerController player;
     // 현재 착용하고 있는 무기와 이벤트
     public event EventHandler EvWeapon;
@@ -25,9 +20,12 @@ public class PlayerController : MonoBehaviour
         set
         {
             currentWeapon = value;
+            weaponSpr = currentWeapon.weaponSpr.GetComponent<SpriteRenderer>();
             EvWeapon();
         }
     }
+    [SerializeField]
+    public SpriteRenderer weaponSpr;
     // 무기Info 참조
     [SerializeField]
     private WeaponInfo weaponInfo;
@@ -35,6 +33,22 @@ public class PlayerController : MonoBehaviour
     public PlayerData playerData;
     // (임시) 플레이어 행동 제어
     public bool IsActing;
+    [Header("Sprite")]
+    // 회전해야 할 총
+    [SerializeField]
+    protected List<Transform> weaponTransform;
+    // 무기스프라이트 위치 보정
+    [SerializeField]
+    protected List<Transform> weaponPosTransform;
+    [SerializeField]
+    protected SpriteRenderer bodySprRend;
+    [SerializeField]
+    protected Sprite frontBodySpr;
+    [SerializeField]
+    protected Sprite backBodySpr;
+    // 회전해야 할 총
+    [SerializeField]
+    protected SortingLayer sort;
     [Header("UI Value")]
     [SerializeField]
     protected Color dmgColor;
@@ -51,6 +65,8 @@ public class PlayerController : MonoBehaviour
         LoadPlayerData();
         //데미지 이벤트 추가
         playerData.EvValueDurability += new PlayerData.EventValueHandler(DisplayDamage);
+        //무기 스프라이트 렌더러 추가
+        weaponSpr = currentWeapon.weaponSpr.GetComponent<SpriteRenderer>();
     }
 
     private void Update()
@@ -150,6 +166,9 @@ public class PlayerController : MonoBehaviour
 
     void RotateWeapon(int n)
     {
+        if (IsActing)
+            return;
+
         RaycastHit hit;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         int layerMask = 1 << LayerMask.NameToLayer("Plane");  // Player 레이어만 충돌 체크함
@@ -164,7 +183,35 @@ public class PlayerController : MonoBehaviour
 
             float direction = Mathf.Atan2(v.z, v.x) * Mathf.Rad2Deg;
 
-            weaponTransform[n].localRotation = Quaternion.Euler(new Vector3(45f, 0f, direction));
+            if(direction > 0 && direction < 180)
+            {
+                //weaponSpr.sortingOrder = -1;
+                Vector3 pos = new Vector3(weaponPosTransform[(int)weaponMode].localPosition.x, 0.14f, 0.4f);
+                weaponPosTransform[(int)weaponMode].transform.localPosition = pos;
+                bodySprRend.sprite = backBodySpr;
+            }
+            else
+            {
+                //weaponSpr.sortingOrder = 1;
+                Vector3 pos = new Vector3(weaponPosTransform[(int)weaponMode].localPosition.x, 0.37f, 0.17f);
+                weaponPosTransform[(int)weaponMode].localPosition = pos;
+                bodySprRend.sprite = frontBodySpr;
+            }
+            if (direction > 90 && direction <= 180 || direction > -180 && direction < -90)
+            {
+                Vector3 xFlip = new Vector3(-1f, 1f, 1f);
+                transform.localScale = xFlip;
+                weaponSpr.flipX = true;
+                direction *= -1;
+            }
+            else
+            {
+                Vector3 xFlip = new Vector3(1f, 1f, 1f);
+                transform.localScale = xFlip;
+                weaponSpr.flipX = false;
+            }
+
+            weaponTransform[n].localRotation = Quaternion.Euler(new Vector3(90f, 0f, direction));
         }     
     }
 }

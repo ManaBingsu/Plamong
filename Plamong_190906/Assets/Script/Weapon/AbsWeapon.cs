@@ -10,6 +10,9 @@ public abstract class AbsWeapon : MonoBehaviour
     public float delay;
     public bool isDelay;
 
+    // 무기 스프라이트 렌더러
+    public SpriteRenderer weaponSpr;
+
     public abstract IEnumerator MouseAttack1(int damage, Transform attacker, Vector3 targetPos);
     /*
     public abstract IEnumerator SkillQ();

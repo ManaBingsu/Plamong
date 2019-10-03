@@ -5,7 +5,6 @@ using UnityEngine;
 public class WeaponGun : AbsWeapon
 {
 
-
     [SerializeField]
     private BulletPooling bulletPulling;
 

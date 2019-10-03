@@ -50,3 +50,6 @@ TagManager:
   - name: Enemy
     uniqueID: 1096460657
     locked: 0
+  - name: Labortory
+    uniqueID: 125941329
+    locked: 0

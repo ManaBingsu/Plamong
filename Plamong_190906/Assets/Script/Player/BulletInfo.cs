@@ -12,6 +12,8 @@ public class BulletInfo : MonoBehaviour
     public Vector3 targetPosition;
     // 총알 속도
     public float moveVelocity;
+    // 총알 발사 위치
+    public float shotPosValue;
     // 총알이 날아가는 시간
     public float existTime;
     // 총알 유형, 스프라이트 유형
@@ -40,6 +42,11 @@ public class BulletInfo : MonoBehaviour
             AbsEnemy enemy = col.gameObject.GetComponent<AbsEnemy>();
             enemy.GetCrowdControl(AbsEnemy.CrowdControl.KnockBack, attackerTransform, 0.1f, 100f);
             enemy.GetDamage(bulletDamage, attackerTransform);
+            gameObject.SetActive(false);
+        }
+
+        if (col.gameObject.tag == "Laboratory" && col.isTrigger == false)
+        {
             gameObject.SetActive(false);
         }
     }
@@ -80,15 +87,19 @@ public class BulletInfo : MonoBehaviour
     public IEnumerator TranslateBullet()
     {
         // 타겟의 방향 지정, y 값이 동일해야한다.
-        targetPosition.y = 0f;
+        targetPosition.y = 0.5f;
         Vector3 myPos = transform.position;
-        myPos.y = 0f;
+        myPos.y = 0.5f;
+
         Vector3 dir = (targetPosition - myPos).normalized;
+        // 몸 앞에서 나가기
+        transform.Translate(dir * shotPosValue);
         // 정해진 범위만큼 날아가기
         float time = 0f;
         while(time < existTime)
         {
             transform.Translate(dir * moveVelocity * Time.deltaTime);
+            transform.position = new Vector3(transform.position.x, 0.65f, transform.position.z);
             time += Time.deltaTime;
             yield return null;
         }
