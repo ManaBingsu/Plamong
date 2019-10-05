@@ -12,6 +12,8 @@ public abstract class AbsWeapon : MonoBehaviour
 
     // 무기 스프라이트 렌더러
     public SpriteRenderer weaponSpr;
+    // 무기 스프라이트 렌더러
+    public Animator weaponAnimator;
 
     public abstract IEnumerator MouseAttack1(int damage, Transform attacker, Vector3 targetPos);
     /*

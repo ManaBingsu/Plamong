@@ -17,6 +17,8 @@ MonoBehaviour:
   skillName: "\uACF5\uACA9\uC6A9 \uD3EC\uD0D1"
   index: 0
   video: {fileID: 32900000, guid: b0a2394adfaaa254a8dc89319638c7f7, type: 3}
+  isLearned: 1
+  fowardSkillList: []
   maxLevel: 3
   level: 0
   script: "\uACF5\uACA9\uC744 \uC704\uD574 \uC124\uACC4\uB41C \uD3EC\uD0D1\n\uC785\uB2C8\uB2E4.\n\uAC15\uB825\uD558\uC9C4

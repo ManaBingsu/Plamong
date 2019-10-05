@@ -24,8 +24,10 @@ public class PlayerController : MonoBehaviour
             EvWeapon();
         }
     }
+    // 무기
     [SerializeField]
     public SpriteRenderer weaponSpr;
+
     // 무기Info 참조
     [SerializeField]
     private WeaponInfo weaponInfo;

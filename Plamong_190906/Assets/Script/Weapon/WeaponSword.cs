@@ -10,6 +10,8 @@ public class WeaponSword : AbsWeapon
     private float swingRange;
     [SerializeField]
     private float swingSpeed;
+    [SerializeField]
+    private int swingDirection;
     [Header("Reference")]
     [SerializeField]
     private Transform rangeTransform;
@@ -29,10 +31,14 @@ public class WeaponSword : AbsWeapon
     {
         player = PlayerController.player;
         rangeObj.gameObject.SetActive(false);
+        swingDirection = 1;
     }
 
     public override IEnumerator MouseAttack1(int damage, Transform attackerTransform, Vector3 targetPos)
     {
+        if (isDelay)
+            yield break;
+
         rangeObj.damage = damage;
         rangeObj.attackerTransform = attackerTransform;
         player.IsActing = true;
@@ -43,9 +49,6 @@ public class WeaponSword : AbsWeapon
 
     public IEnumerator DashToAttackDirection(Vector3 targetPos)
     {
-        if (isDelay)
-            yield break;
-
         isDelay = true;
         StartCoroutine(DelayTimer());
         Vector3 direction = (targetPos - player.transform.position).normalized;
@@ -72,20 +75,29 @@ public class WeaponSword : AbsWeapon
     
     IEnumerator SwingSword(Vector3 targetPos)
     {
+        // 무기 휘두르는 방향 변경
+        swingDirection *= -1;
+
         rangeObj.gameObject.SetActive(true);
         Vector3 targetY = (targetPos - player.transform.position).normalized * 360f;
         rangeTransform.rotation = Quaternion.LookRotation(targetY);
         // origin rotation value
         Vector3 originRot = rangeTransform.rotation.eulerAngles;
         //최소, 최대 회전값
-        float firstRotation = originRot.y + swingRange;
-        float lastRotation = originRot.y - swingRange;
+        
+        float firstRotation = originRot.y + swingRange * (swingDirection);
+        float lastRotation = originRot.y - swingRange * (swingDirection);
         // origin sprite value
         Vector3 originSprRot = swordTransform.rotation.eulerAngles;
-        float fisrtSprRot = originSprRot.z + swingRange;
-        float lastSprRot = originSprRot.z - swingRange;
+        float fisrtSprRot = originSprRot.z + swingRange * (swingDirection);
+        float lastSprRot = originSprRot.z - swingRange * (swingDirection);
 
         float time = 0f;
+        // 무기 애니메이션 재생
+        if(swingDirection == 1)
+            weaponAnimator.SetTrigger("trgAttack");
+        else
+            weaponAnimator.SetTrigger("trgAttackLeft");
 
         while (time <= 1f)
         {
