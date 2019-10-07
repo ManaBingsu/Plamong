@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9874b0781c4c557458d6a5d5a8544d1b, type: 3}
   m_Name: Stage_2
   m_EditorClassIdentifier: 
-  stageRestTime: 10
+  stageIndex: 2
+  stageRestTime: 5
   waveDataList:
   - {fileID: 11400000, guid: 8faea06d2a3d0324ea0fcf03a46a8fec, type: 2}

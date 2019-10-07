@@ -33,8 +33,7 @@ public class PlayerController : MonoBehaviour
     private WeaponInfo weaponInfo;
     // 플레이어의 데이터
     public PlayerData playerData;
-    // (임시) 플레이어 행동 제어
-    public bool IsActing;
+
     [Header("Sprite")]
     // 회전해야 할 총
     [SerializeField]
@@ -51,6 +50,10 @@ public class PlayerController : MonoBehaviour
     // 회전해야 할 총
     [SerializeField]
     protected SortingLayer sort;
+    [Header("Status")]
+    // (임시) 플레이어 행동 제어
+    public bool isActing;
+    public bool isDie;
     [Header("UI Value")]
     [SerializeField]
     protected Color dmgColor;
@@ -77,7 +80,7 @@ public class PlayerController : MonoBehaviour
         // 임시 무기변경
         if (Input.GetKeyUp(KeyCode.Tab))
         {
-            if (IsActing)
+            if (isActing)
                 return;
 
             if(weaponMode == WeaponMode.Sword)
@@ -106,13 +109,14 @@ public class PlayerController : MonoBehaviour
     // 플레이어의 데이터를 게임매니저로부터 불러와 clone화 시킴
     void LoadPlayerData()
     {
-        playerData = Instantiate(GameManager.gameManager.playerInfoData) as PlayerData;
+        //playerData = Instantiate(GameManager.gameManager.playerInfoData) as PlayerData;
+        playerData = Instantiate(this.playerData) as PlayerData;
     }
     // 플레이어 움직임 제어
     void Move()
     {
         // 임시 행동 제한
-        if (IsActing)
+        if (isActing)
             return;
         // 임시
         if(Input.GetKey(KeyCode.W))
@@ -140,7 +144,7 @@ public class PlayerController : MonoBehaviour
     // 플레이어 공격 제어
     void MouseAttack()
     {
-        if (IsActing)
+        if (isActing)
             return;
 
         RaycastHit hit;
@@ -161,14 +165,14 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator ActingDelay(float time)
     {
-        IsActing = true;
+        isActing = true;
         yield return new WaitForSeconds(time);
-        IsActing = false;
+        isActing = false;
     }
 
     void RotateWeapon(int n)
     {
-        if (IsActing)
+        if (isActing)
             return;
 
         RaycastHit hit;

@@ -42,14 +42,12 @@ public class TurretGun : AbsTurret
                     if(cortnDecomp == null)
                     {
                         cortnDecomp = StartCoroutine(Decomposition());
-                        Debug.Log("분해 시작");
                     }
                     else
                     // 분해 취소
                     {
                         StopCoroutine(cortnDecomp);
                         cortnDecomp = null;
-                        Debug.Log("분해 취소");
                     }
                 }
             }

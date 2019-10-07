@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8550e495fad15246a14bb032114670e, type: 3}
   m_Name: Wave_1_2
   m_EditorClassIdentifier: 
+  waveIndex: 2
   waveRestTime: 0
   levelList:
   - monsterName: 0

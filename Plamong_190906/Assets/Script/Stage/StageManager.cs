@@ -4,6 +4,36 @@ using UnityEngine;
 
 public class StageManager : MonoBehaviour
 {
+    public static StageManager stageManager;
+
+    public delegate void EventHandler();
+
+    public event EventHandler EvWave;
+    private WaveData currentWave;
+    public WaveData CurrentWave
+    {
+        get { return currentWave; }
+        set
+        {
+            currentWave = value;
+            if(EvWave != null)
+               EvWave();
+        }
+    }
+
+    public event EventHandler EvStage;
+    private StageData currentStage;
+    public StageData CurrentStage
+    {
+        get { return currentStage; }
+        set
+        {
+            currentStage = value;
+            if(EvStage != null)
+                EvStage();
+        }
+    }
+
     // 스테이지가 끝난 후 쉬는 시간, 아직 구현 안됨
     public bool isRest;
     [SerializeField]
@@ -26,31 +56,37 @@ public class StageManager : MonoBehaviour
     [Header("Stage Data")]
     public List<StageData> stageList;
 
+    private void Awake()
+    {
+        if (stageManager == null)
+            stageManager = this;
+    }
+
     private void Start()
     {
+        CurrentStage = stageList[0];
+        CurrentWave = stageList[0].waveDataList[0];
         StartCoroutine(StageDispencer());
     }
 
     IEnumerator StageDispencer()
     {
-        int n = 1;
         foreach(StageData stg in stageList)
         {
+            CurrentStage = stg;
+            CurrentWave = stg.waveDataList[0];
+            // 스테이지 시작 전 쉬는 시간
+            yield return new WaitForSeconds(stg.stageRestTime);
             // 스테이지 실행
             yield return StartCoroutine(WaveDispencer(stg));
-            // 스테이지 몬스터가 정리될 때까지 정지
-            /*while (isRest == true)
-                yield return null;*/
-            // 스테이지 끝난 후 쉬는 시간
-            yield return new WaitForSeconds(stg.stageRestTime);
         }
     }
 
     public IEnumerator WaveDispencer(StageData stg)
     {
-        int n = 1;
         foreach (WaveData wvData in stg.waveDataList)
         {
+            CurrentWave = wvData;
             // 웨이브 실행
             yield return StartCoroutine(LevelDispencer(wvData.levelList));
             // 웨이브 끝난 후 쉬는 시간

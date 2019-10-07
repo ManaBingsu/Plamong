@@ -38,7 +38,7 @@ public class EnemyPladog : AbsEnemy
             return;
         // 이미 한 명을 추적하고 있는 경우 타겟 불가
         
-        if (target !=null && target.CompareTag("Player"))
+        if (target != null && target.CompareTag("Player"))
             return;
 
         if(col.CompareTag("Player"))
@@ -58,6 +58,7 @@ public class EnemyPladog : AbsEnemy
         else if (target == null)
         {
             target = LaboratoryInfo.laboratory.transform;
+            attackDistance = laborAttackDistance;
             nav.destination = target.position;
         }
         // 타겟이 사망할 경우
@@ -65,10 +66,12 @@ public class EnemyPladog : AbsEnemy
         {
             target = null;
         }
+
+        // 공격거리 변경
+        if (target.CompareTag("Laboratory"))
+            attackDistance = laborAttackDistance;
         else
-        {
-            return;
-        }
+            attackDistance = originAtackDistance;
     }
 
     public override IEnumerator AggroTimer()
@@ -156,7 +159,18 @@ public class EnemyPladog : AbsEnemy
         // 공격 모션 후에도 그 자리에 있으면 데미지
         if(attackDistance > GetTargetDistance(target))
         {
-            PlayerController.player.playerData.Durability -= enemyData.Damage;
+            // 임시 코드, 나중에는 콜라이더 생성으로 바꿔야함
+            if (target.gameObject.CompareTag("Laboratory"))
+            {
+                LaboratoryInfo.laboratory.laboratoryData.HP -= enemyData.Damage;
+                // 연구실 시즈모드 박기! 연구실만 공격함
+                isAttackLaboratory = true;
+            }          
+            else if(target.gameObject.CompareTag("Player"))
+            {
+
+                PlayerController.player.playerData.Durability -= enemyData.Damage;
+            }
         }
         yield return new WaitForSeconds(0.5f);
         isAttack = false;

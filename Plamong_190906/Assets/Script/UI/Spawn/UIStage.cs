@@ -1,18 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIStage : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public Text stageText;
+
+    private void Start()
     {
-        
+        StageManager.stageManager.EvStage += new StageManager.EventHandler(SetStage);
+        SetStage();
     }
 
-    // Update is called once per frame
-    void Update()
+    void SetStage()
     {
-        
+        stageText.text = StageManager.stageManager.CurrentStage.stageIndex.ToString();
     }
 }

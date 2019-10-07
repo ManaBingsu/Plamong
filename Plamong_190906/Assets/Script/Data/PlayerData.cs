@@ -33,7 +33,11 @@ public class PlayerData : ScriptableObject
         get { return durability; }
         set
         {
-            if (value < 1)
+            // 사망 시
+            if (durability == 0)
+                return;
+
+            if (durability - value < 1)
             {
                 EvValueDurability(durability - value);
                 durability = 0;

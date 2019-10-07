@@ -41,9 +41,9 @@ public class WeaponSword : AbsWeapon
 
         rangeObj.damage = damage;
         rangeObj.attackerTransform = attackerTransform;
-        player.IsActing = true;
+        player.isActing = true;
         yield return StartCoroutine(DashToAttackDirection(targetPos));
-        player.IsActing = false;
+        player.isActing = false;
         yield return null;
     }
 

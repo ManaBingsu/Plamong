@@ -199,8 +199,9 @@ MonoBehaviour:
   isAttack: 0
   target: {fileID: 0}
   targetDistance: 0
-  attackDistance: 2.2
-  laborAttackDistance: 8
+  originAtackDistance: 2.5
+  attackDistance: 2.5
+  laborAttackDistance: 3
   isAttackLaboratory: 0
   isAggro: 0
   aggroTimer: 0

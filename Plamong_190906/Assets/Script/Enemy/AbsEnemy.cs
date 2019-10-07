@@ -30,6 +30,9 @@ public abstract class AbsEnemy : MonoBehaviour
     protected float targetDistance;
     // 일반 공격 거리
     [SerializeField]
+    protected float originAtackDistance;
+    // 공격 거리
+    [SerializeField]
     protected float attackDistance;
     // 연구실 공격 거리
     [SerializeField]
@@ -132,8 +135,6 @@ public abstract class AbsEnemy : MonoBehaviour
     public abstract void Die();
     // CC기 걸림
     public abstract void GetCrowdControl(CrowdControl cc, Transform attacker, float ccTime, float power);
-
-    // Virtual 인 함수들, 노력해보자
 
     // 데미지를 받음
     public abstract void GetDamage(int value, Transform attacker);

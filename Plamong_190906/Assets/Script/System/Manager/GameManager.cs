@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
     public static GameManager gameManager;
     // 플레이어의 기본 정보가 담긴 데이터
     public PlayerData playerInfoData;
+    // 연구실의 기본 정보가 담긴 데이터
+    public LaboratoryData laboratoryData;
 
     private void Awake()
     {

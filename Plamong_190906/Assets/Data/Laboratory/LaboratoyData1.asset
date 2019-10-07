@@ -12,12 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 059068ba039c0c9498dc265eccc33f99, type: 3}
   m_Name: LaboratoyData1
   m_EditorClassIdentifier: 
+  currentPhase: 0
   phaseList:
+  - phaseMaxHp: 500
+    bonusAbility: 1
   - phaseMaxHp: 400
     bonusAbility: 1.2
   - phaseMaxHp: 200
     bonusAbility: 1.5
+  - phaseMaxHp: 0
+    bonusAbility: 2
   - phaseMaxHp: 100
     bonusAbility: 2
-  maxHp: 500
+  maxHP: 500
+  phaseMaxHp: 500
   hp: 500
