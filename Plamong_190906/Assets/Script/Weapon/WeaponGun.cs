@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class WeaponGun : AbsWeapon
 {
-
     [SerializeField]
     private BulletPooling bulletPulling;
 
@@ -16,7 +15,7 @@ public class WeaponGun : AbsWeapon
         {
             isDelay = true;
             StartCoroutine(DelayTimer());
-            bulletPulling.ShotBullet(damage, PlayerController.player.transform, targetPos, 30f, BulletInfo.ShotType.Straight, BulletInfo.SpriteType.Straight, AbsEnemy.CrowdControl.KnockBack, 1f, 0f);
+            bulletPulling.ShotBullet(damage, PlayerController.player.transform, targetPos, 30f, BulletInfo.ShotType.Straight, BulletInfo.SpriteType.Straight);
             yield return null;
         }
        

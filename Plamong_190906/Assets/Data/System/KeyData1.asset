@@ -9,10 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9874b0781c4c557458d6a5d5a8544d1b, type: 3}
-  m_Name: Stage_2
+  m_Script: {fileID: 11500000, guid: c7f42aacee27dcb4a83361c3d9ac05b7, type: 3}
+  m_Name: KeyData1
   m_EditorClassIdentifier: 
-  stageIndex: 2
-  stageRestTime: 15
-  waveDataList:
-  - {fileID: 11400000, guid: 8faea06d2a3d0324ea0fcf03a46a8fec, type: 2}
+  keySkillInfo: 107

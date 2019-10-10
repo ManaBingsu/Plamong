@@ -102,6 +102,7 @@ public class EnemyPladog : AbsEnemy
         if (stunCounter > 0)
         {
             state = State.Idle;
+            Debug.Log("스턴카운터 " + stunCounter);
             return;
         }
 
@@ -131,10 +132,10 @@ public class EnemyPladog : AbsEnemy
         switch (state)
         {
             case State.Idle:
-                //nav.isStopped = true;
+                nav.isStopped = true;
                 break;
             case State.Move:
-                //nav.isStopped = false;
+                nav.isStopped = false;
                 Move();
                 break;
             case State.Attack:
@@ -152,23 +153,23 @@ public class EnemyPladog : AbsEnemy
 
     public override IEnumerator Attack()
     {
+        Transform atkTarget = target;
         isAttack = true;
         nav.isStopped = true;
         // 공격 모션
         yield return new WaitForSeconds(0.3f);
         // 공격 모션 후에도 그 자리에 있으면 데미지
-        if(attackDistance > GetTargetDistance(target))
+        if(attackDistance > GetTargetDistance(atkTarget))
         {
             // 임시 코드, 나중에는 콜라이더 생성으로 바꿔야함
-            if (target.gameObject.CompareTag("Laboratory"))
+            if (atkTarget.gameObject.CompareTag("Laboratory"))
             {
                 LaboratoryInfo.laboratory.laboratoryData.HP -= enemyData.Damage;
                 // 연구실 시즈모드 박기! 연구실만 공격함
                 isAttackLaboratory = true;
             }          
-            else if(target.gameObject.CompareTag("Player"))
+            else if(atkTarget.gameObject.CompareTag("Player"))
             {
-
                 PlayerController.player.playerData.Durability -= enemyData.Damage;
             }
         }
@@ -221,6 +222,7 @@ public class EnemyPladog : AbsEnemy
                 knockBackCoroutine = StartCoroutine(KnockBack(attacker, ccTime, power));
                 break;
             case CrowdControl.Slow:
+                Debug.Log("슬로우");
                 StartCoroutine(Slow(ccTime, power));      
                 break;
             case CrowdControl.Stun:
@@ -262,6 +264,7 @@ public class EnemyPladog : AbsEnemy
     public override IEnumerator Stun(float ccTime)
     {
         stunCounter++;
+        Debug.Log("ccTime " + ccTime);
         yield return new WaitForSeconds(ccTime);
         stunCounter--;
     }

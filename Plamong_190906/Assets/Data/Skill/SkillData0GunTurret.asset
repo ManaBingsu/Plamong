@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f855c998522da3e48914327125172c31, type: 3}
-  m_Name: SkillDataGunTurret
+  m_Name: SkillData0GunTurret
   m_EditorClassIdentifier: 
-  weaponType: 0
+  weaponType: 1
   icon: {fileID: 21300000, guid: 04ab2adbd7bd55549ae5d6d4b4e334ed, type: 3}
-  skillName: "\uACF5\uACA9\uC6A9 \uD3EC\uD0D1"
+  skillName: "\uAC74\uD130\uB81B"
   index: 0
   video: {fileID: 32900000, guid: b0a2394adfaaa254a8dc89319638c7f7, type: 3}
-  isLearned: 1
+  isLearned: 0
   fowardSkillList: []
   maxLevel: 3
   level: 0

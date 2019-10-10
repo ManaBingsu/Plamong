@@ -151,7 +151,7 @@ NavMeshAgent:
   m_Height: 2
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 3
 --- !u!135 &870388144761876548
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -201,7 +201,7 @@ MonoBehaviour:
   targetDistance: 0
   originAtackDistance: 2.5
   attackDistance: 2.5
-  laborAttackDistance: 3
+  laborAttackDistance: 3.5
   isAttackLaboratory: 0
   isAggro: 0
   aggroTimer: 0

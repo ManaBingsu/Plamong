@@ -35,15 +35,36 @@ public class StageManager : MonoBehaviour
     }
 
     // 스테이지가 끝난 후 쉬는 시간, 아직 구현 안됨
-    public bool isRest;
+    [SerializeField]
+    private bool isRest;
+    public event EventHandler EvIsRestEnd;
+    public event EventHandler EvIsRest;
+    public bool IsRest
+    {
+        get { return isRest; }
+        set
+        {
+          
+            if (value == false)
+            {
+                EvIsRestEnd ?.Invoke();
+            }
+            
+            isRest = value;
+
+            EvIsRest ?.Invoke();
+        }
+    }
     [SerializeField]
     private float restTime;
+    public event EventHandler EvRestTime;
     public float RestTime
     {
         get { return restTime; }
         set
         {
             restTime = value;
+            EvRestTime?.Invoke();
         }
     }
 
@@ -66,6 +87,7 @@ public class StageManager : MonoBehaviour
     {
         CurrentStage = stageList[0];
         CurrentWave = stageList[0].waveDataList[0];
+        RestTime = stageList[0].stageRestTime;
         StartCoroutine(StageDispencer());
     }
 
@@ -75,8 +97,11 @@ public class StageManager : MonoBehaviour
         {
             CurrentStage = stg;
             CurrentWave = stg.waveDataList[0];
+            IsRest = true;
             // 스테이지 시작 전 쉬는 시간
-            yield return new WaitForSeconds(stg.stageRestTime);
+            //yield return new WaitForSeconds(stg.stageRestTime);
+            yield return StartCoroutine(RestTimer((int)stg.stageRestTime));
+            IsRest = false;
             // 스테이지 실행
             yield return StartCoroutine(WaveDispencer(stg));
         }
@@ -104,6 +129,16 @@ public class StageManager : MonoBehaviour
                 Instantiate(allMonsterList.monsterList[0], directionList[(int)lv.spawnDirection].position, Quaternion.identity);
             }
             yield return new WaitForSeconds(lv.nextTime);
+        }
+    }
+
+    IEnumerator RestTimer(int time)
+    {
+        RestTime = time;
+        while (RestTime > 0)
+        {
+            yield return new WaitForSeconds(1.0f);
+            RestTime -= 1;
         }
     }
 }

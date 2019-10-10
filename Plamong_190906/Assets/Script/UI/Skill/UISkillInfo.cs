@@ -10,6 +10,8 @@ public class UISkillInfo : MonoBehaviour
     public static UISkillInfo skillInfo;
     public delegate void eventHandler();
     public eventHandler getInfoEvent;
+    // Skill UI On / Off
+    public GameObject objSkillUI;
     [Header("Select Skill")]
     // 현재 보고 있는 스킬
     [SerializeField]
@@ -48,6 +50,9 @@ public class UISkillInfo : MonoBehaviour
         // 스킬 포인트
         skillPoint.text = playerData.SkillPoint.ToString();
         playerData.EvSkillPoint += new PlayerData.EventHandler(SetSkillLevel);
+        // 스킬정보창 띄우기 이벤트 할당
+        KeySettingManager.keyManager.EvSkillInfo += new KeySettingManager.EventHandler(OnOffSkillInfo);
+        StageManager.stageManager.EvIsRestEnd += new StageManager.EventHandler(ForceOffSkillInfo);
     }
 
     public void SetInfo(UISkillTreeIcon skillIcon, SkillData skillData)
@@ -84,7 +89,40 @@ public class UISkillInfo : MonoBehaviour
     {
         if(selectSkill != null)
         {
+            // 선행스킬을 배우지 않았을 경우
+            for (int i = 0; i < selectSkill.skillData.fowardSkillList.Count; i++)
+            {
+                if(selectSkill.skillData.fowardSkillList[i].isLearned == false)
+                {
+                    Debug.Log("선행스킬 부족!");
+                    // 선행스킬 안찍음! 효과음
+                    return;
+                }
+            }
+
+
             selectSkill.skillData.Level += 1;
         }
+    }
+
+    public void OnOffSkillInfo()
+    {
+        // 쉬는 시간 아닐경우 못함
+        if (StageManager.stageManager.IsRest == false)
+            return;
+
+        if (objSkillUI.activeSelf)
+        {
+            objSkillUI.SetActive(false);
+        }
+        else
+        {
+            objSkillUI.SetActive(true);
+        }
+    }
+
+    void ForceOffSkillInfo()
+    {
+        objSkillUI.SetActive(false);
     }
 }

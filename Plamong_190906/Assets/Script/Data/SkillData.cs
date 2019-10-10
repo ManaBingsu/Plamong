@@ -31,6 +31,7 @@ public class SkillData : ScriptableObject
         get { return level; }
         set
         {
+            // 스킬레벨이 최대일 경우
             if (value > maxLevel)
             {
                 Debug.Log("스킬 레벨 최대치입니다!");

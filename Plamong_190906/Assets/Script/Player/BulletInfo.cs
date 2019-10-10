@@ -40,7 +40,7 @@ public class BulletInfo : MonoBehaviour
         if(col.gameObject.tag == "Enemy" && col.isTrigger == false)
         {
             AbsEnemy enemy = col.gameObject.GetComponent<AbsEnemy>();
-            enemy.GetCrowdControl(AbsEnemy.CrowdControl.KnockBack, attackerTransform, 0.1f, 100f);
+            enemy.GetCrowdControl(ccState, attackerTransform, ccTime, ccPower);
             enemy.GetDamage(bulletDamage, attackerTransform);
             gameObject.SetActive(false);
         }
