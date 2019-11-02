@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 192be68a5c8689b468e9d1f62ed7e113, type: 3}
   m_Name: GunTurret
   m_EditorClassIdentifier: 
-  hp: 100
+  hp: 15
   titanium: 10
   damage: 3
   attackDelay: 0.25

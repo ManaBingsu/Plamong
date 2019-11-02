@@ -151,6 +151,9 @@ public abstract class AbsEnemy : MonoBehaviour
     // 타겟과의 거리 측정
     public float GetTargetDistance(Transform tg)
     {
+        if (target == null)
+            return 999f;
+
         Vector3 targetPos = new Vector3(tg.position.x, 0f, tg.position.z);
         Vector3 myPos = new Vector3(transform.position.x, 0f, transform.position.z);
 

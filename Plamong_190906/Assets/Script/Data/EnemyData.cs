@@ -21,25 +21,25 @@ public class EnemyData : ScriptableObject
     }
 
     [SerializeField]
-    private int hP;
+    private int hp;
     public event EventHandler EvHP;
     public event EventHandler EvDie;
     public event EventValueHandler EvValueHP;
     public int HP
     {
-        get { return hP; }
+        get { return hp; }
         set
         {
             if (value < 1)
             {
-                EvValueHP(hP - value);
-                hP = 0;
+                EvValueHP(hp - value);
+                hp = 0;
                 EvDie();
             }
             else
             {
-                EvValueHP(hP - value);
-                hP = value;
+                EvValueHP(hp - value);
+                hp = value;
                 //EvHP();
             }
         }

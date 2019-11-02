@@ -63,31 +63,32 @@ public class TurretGun : AbsTurret
     }
 
     IEnumerator SetTarget()
-    {
-        
+    {    
         targetCheckDelayTime = new WaitForSeconds(turretData.AttackDelay);
 
         while (true)
         {
+            // 만약 상호작용중일경우
             if (isDecomp)
                 continue;
 
             if (enemyList.Count > 0)
             {
                 float minDistance = 9999f;
-                foreach (Transform enemy in enemyList)
+                for(int i = 0; i < enemyList.Count; i++)
                 {
-                    if(enemy != null)
+                    if(enemyList[i] != null)
                     {
-                        float targetDistance = GetTargetDistance(enemy);
+                        float targetDistance = GetTargetDistance(enemyList[i]);
                         if (targetDistance < minDistance)
                         {
                             minDistance = targetDistance;
-                            target = enemy;
+                            target = enemyList[i];
                         }
                     }
                     else
                     {
+                        enemyList.Remove(enemyList[i]);
                         continue;
                     }
 
@@ -113,7 +114,7 @@ public class TurretGun : AbsTurret
         bulletPooling.ShotBullet
             (turretData.Damage, transform, target.position, 50f,
             BulletInfo.ShotType.Straight, BulletInfo.SpriteType.Straight,
-            AbsEnemy.CrowdControl.KnockBack, 1.5f, 10f);
+            AbsEnemy.CrowdControl.Slow, 0.5f, 0.5f);
     }
 
     void RotateGun()
@@ -135,6 +136,28 @@ public class TurretGun : AbsTurret
 
         float distance = Vector3.Distance(myPos, targetPos);
         return distance;
+    }
+
+    public override void GetDamage(int value)
+    {
+        Debug.Log(turretData.HP);
+        if(turretData.HP - value <= 0)
+        {
+            turretData.HP -= value;
+            Die();
+            return;
+        }
+        turretData.HP -= value;
+    }
+
+    public override void DisplayDamage(int value)
+    {
+        UIDamagePooling.damagePulling.DisplayDamage(transform.position, value, Color.green, 14);
+    }
+
+    public override void Die()
+    {
+        gameObject.SetActive(false);
     }
 
 }

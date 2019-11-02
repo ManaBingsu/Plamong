@@ -238,6 +238,7 @@ MonoBehaviour:
   bulletDamage: 0
   targetPosition: {x: 0, y: 0, z: 0}
   moveVelocity: 0
+  shotPosValue: 0
   existTime: 0
   shotType: 0
   spriteType: 0
@@ -780,6 +781,7 @@ MonoBehaviour:
   bulletDamage: 0
   targetPosition: {x: 0, y: 0, z: 0}
   moveVelocity: 0
+  shotPosValue: 0
   existTime: 0
   shotType: 0
   spriteType: 0
@@ -927,6 +929,7 @@ MonoBehaviour:
   bulletDamage: 0
   targetPosition: {x: 0, y: 0, z: 0}
   moveVelocity: 0
+  shotPosValue: 0
   existTime: 0
   shotType: 0
   spriteType: 0
@@ -1074,6 +1077,7 @@ MonoBehaviour:
   bulletDamage: 0
   targetPosition: {x: 0, y: 0, z: 0}
   moveVelocity: 0
+  shotPosValue: 0
   existTime: 0
   shotType: 0
   spriteType: 0
@@ -1142,6 +1146,7 @@ MonoBehaviour:
   bulletDamage: 0
   targetPosition: {x: 0, y: 0, z: 0}
   moveVelocity: 0
+  shotPosValue: 0
   existTime: 0
   shotType: 0
   spriteType: 0
@@ -1210,6 +1215,7 @@ MonoBehaviour:
   bulletDamage: 0
   targetPosition: {x: 0, y: 0, z: 0}
   moveVelocity: 0
+  shotPosValue: 0
   existTime: 0
   shotType: 0
   spriteType: 0
@@ -1357,6 +1363,7 @@ MonoBehaviour:
   bulletDamage: 0
   targetPosition: {x: 0, y: 0, z: 0}
   moveVelocity: 0
+  shotPosValue: 0
   existTime: 0
   shotType: 0
   spriteType: 0
@@ -1425,6 +1432,7 @@ MonoBehaviour:
   bulletDamage: 0
   targetPosition: {x: 0, y: 0, z: 0}
   moveVelocity: 0
+  shotPosValue: 0
   existTime: 0
   shotType: 0
   spriteType: 0
@@ -1651,6 +1659,7 @@ MonoBehaviour:
   bulletDamage: 0
   targetPosition: {x: 0, y: 0, z: 0}
   moveVelocity: 0
+  shotPosValue: 0
   existTime: 0
   shotType: 0
   spriteType: 0
@@ -1798,6 +1807,7 @@ MonoBehaviour:
   bulletDamage: 0
   targetPosition: {x: 0, y: 0, z: 0}
   moveVelocity: 0
+  shotPosValue: 0
   existTime: 0
   shotType: 0
   spriteType: 0
@@ -1945,6 +1955,7 @@ MonoBehaviour:
   bulletDamage: 0
   targetPosition: {x: 0, y: 0, z: 0}
   moveVelocity: 0
+  shotPosValue: 0
   existTime: 0
   shotType: 0
   spriteType: 0
@@ -2013,6 +2024,7 @@ MonoBehaviour:
   bulletDamage: 0
   targetPosition: {x: 0, y: 0, z: 0}
   moveVelocity: 0
+  shotPosValue: 0
   existTime: 0
   shotType: 0
   spriteType: 0
@@ -2160,6 +2172,7 @@ MonoBehaviour:
   bulletDamage: 0
   targetPosition: {x: 0, y: 0, z: 0}
   moveVelocity: 0
+  shotPosValue: 0
   existTime: 0
   shotType: 0
   spriteType: 0
@@ -2228,6 +2241,7 @@ MonoBehaviour:
   bulletDamage: 0
   targetPosition: {x: 0, y: 0, z: 0}
   moveVelocity: 0
+  shotPosValue: 0
   existTime: 0
   shotType: 0
   spriteType: 0
@@ -2263,7 +2277,7 @@ GameObject:
   - component: {fileID: 4799107522428340459}
   m_Layer: 0
   m_Name: GunTurretP
-  m_TagString: Player
+  m_TagString: Turret
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2298,6 +2312,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
+  skillData: {fileID: 0}
   turretData: {fileID: 11400000, guid: 31362a4b639fa764a900ed6be178f5c5, type: 2}
   gunTransform: {fileID: 8836868193471825862}
   target: {fileID: 0}
@@ -2552,6 +2567,7 @@ MonoBehaviour:
   bulletDamage: 0
   targetPosition: {x: 0, y: 0, z: 0}
   moveVelocity: 0
+  shotPosValue: 0
   existTime: 0
   shotType: 0
   spriteType: 0

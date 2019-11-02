@@ -5,13 +5,17 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "TurretData", menuName = "Skill/TurretData")]
 public class TurretData : ScriptableObject
 {
+    public delegate void DmgEventHandler(int a);
+
     [SerializeField]
     protected int hp;
+    public event DmgEventHandler EvHP;
     public int HP
     {
         get { return hp; }
         set
         {
+            EvHP?.Invoke(hp - value);
             hp = value;
         }
     }

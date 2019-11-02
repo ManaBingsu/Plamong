@@ -32,12 +32,14 @@ public abstract class AbsTurret : MonoBehaviour
     private void Awake()
     {
         //skillData = Instantiate(skillData) as SkillData;
+        turretData = Instantiate(this.turretData) as TurretData;
     }
 
     protected virtual void Start()
     {
         //skillData = Instantiate(skillData) as SkillData;
         StartCoroutine(ConsumeTitanium());
+        turretData.EvHP += new TurretData.DmgEventHandler(DisplayDamage);
     }
 
     public IEnumerator Decomposition()
@@ -67,6 +69,8 @@ public abstract class AbsTurret : MonoBehaviour
     public abstract void CallFunctionByState();
     // 공격
     protected abstract IEnumerator Attack();
-    // 죽음
-    public abstract void Die();*/
+    // 죽음*/
+    public abstract void GetDamage(int value);
+    public abstract void Die();
+    public abstract void DisplayDamage(int value);
 }

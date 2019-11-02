@@ -44,6 +44,13 @@ public class EnemyPladog : AbsEnemy
         if(col.CompareTag("Player"))
         {
             target = col.transform;
+            return;
+        }
+
+        if (col.CompareTag("Turret"))
+        {
+            target = col.transform;
+            return;
         }
     }
 
@@ -54,6 +61,11 @@ public class EnemyPladog : AbsEnemy
         {
             target = LaboratoryInfo.laboratory.transform;
         }
+        else if (target != null && target.gameObject.activeSelf == false)
+        {
+            target = null;
+            return;
+        }
         // 타겟이 없는 경우 연구실로
         else if (target == null)
         {
@@ -61,11 +73,7 @@ public class EnemyPladog : AbsEnemy
             attackDistance = laborAttackDistance;
             nav.destination = target.position;
         }
-        // 타겟이 사망할 경우
-        else if (target.gameObject.activeSelf == false)
-        {
-            target = null;
-        }
+
 
         // 공격거리 변경
         if (target.CompareTag("Laboratory"))
@@ -102,7 +110,6 @@ public class EnemyPladog : AbsEnemy
         if (stunCounter > 0)
         {
             state = State.Idle;
-            Debug.Log("스턴카운터 " + stunCounter);
             return;
         }
 
@@ -148,6 +155,8 @@ public class EnemyPladog : AbsEnemy
 
     public override void Move()
     {
+        if (target == null)
+            return;
         nav.destination = target.position;
     }
 
@@ -171,6 +180,10 @@ public class EnemyPladog : AbsEnemy
             else if(atkTarget.gameObject.CompareTag("Player"))
             {
                 PlayerController.player.playerData.Durability -= enemyData.Damage;
+            }
+            else if(atkTarget.gameObject.CompareTag("Turret"))
+            {
+                atkTarget.GetComponent<AbsTurret>().GetDamage(enemyData.Damage);
             }
         }
         yield return new WaitForSeconds(0.5f);
@@ -222,7 +235,6 @@ public class EnemyPladog : AbsEnemy
                 knockBackCoroutine = StartCoroutine(KnockBack(attacker, ccTime, power));
                 break;
             case CrowdControl.Slow:
-                Debug.Log("슬로우");
                 StartCoroutine(Slow(ccTime, power));      
                 break;
             case CrowdControl.Stun:

@@ -2532,7 +2532,7 @@ GameObject:
   - component: {fileID: 4051838955850159726}
   m_Layer: 0
   m_Name: GunTurretP
-  m_TagString: Player
+  m_TagString: Turret
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8612,7 +8612,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a4e27881a9f45046801fb3d90652935, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponData: {fileID: 0}
+  weaponData: {fileID: 11400000, guid: 03a93dea47788544e824e12c10c6b39a, type: 2}
   delay: 0.25
   isDelay: 0
   weaponSpr: {fileID: 803001032}
@@ -14548,7 +14548,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b1d7d71d8e94dd438c273ae7f98cec1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponData: {fileID: 0}
+  weaponData: {fileID: 11400000, guid: ecb18699e7901bb4f976d08bd6f563c8, type: 2}
   delay: 0.08
   isDelay: 0
   weaponSpr: {fileID: 1167965560}
